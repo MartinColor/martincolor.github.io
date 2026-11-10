@@ -120,9 +120,24 @@ a{color:inherit}
 .ft-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .ft-c{background:transparent;color:var(--tinta);border:1.5px solid var(--linea);border-radius:999px;padding:10px 16px;font:600 14px/1 var(--f-texto);cursor:pointer}
 .ft-c[aria-pressed="true"]{background:var(--marino);border-color:var(--marino);color:#fff}
-.ft-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ft{background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-m);padding:22px;display:grid;gap:10px;align-content:start}
-.ft h3{font-size:25px;line-height:1}
+.ft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px;background:var(--superficie);border:1px solid var(--linea);border-radius:24px;padding:4px clamp(16px,3vw,34px)}
+.ft{display:grid;grid-template-columns:clamp(100px,11vw,128px) minmax(0,1fr);gap:clamp(14px,2.2vw,24px);align-items:start;padding:clamp(18px,2.4vw,26px) 0;border-bottom:1px solid var(--linea)}
+.ft-foto{display:grid;place-items:center;aspect-ratio:3/4;background:#fff;border:1px solid #e3eaf2;border-radius:20px;box-shadow:0 1px 3px rgba(0,30,60,.06);padding:10px;overflow:hidden}
+.ft-foto.ph{padding:0}
+.ft-foto.ph img{width:100%;height:100%;max-height:none;object-fit:cover;filter:none}
+.ft-flota{width:100%;height:100%;display:grid;place-items:center;animation:ft-flota 3.6s ease-in-out infinite}
+.ft-foto img,.ft-foto svg{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 8px 8px rgba(0,30,60,.16))}
+.ft-foto svg{width:100%}
+.ft:nth-child(3n+2) .ft-flota{animation-delay:-1.2s}.ft:nth-child(3n) .ft-flota{animation-delay:-2.4s}
+@keyframes ft-flota{0%,100%{transform:translateY(3px)}50%{transform:translateY(-5px)}}
+@media (prefers-reduced-motion:reduce){.ft-flota{animation:none}}
+.ft-i{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;align-content:start;min-width:0}
+.ft-i dd,.ft-i p{overflow-wrap:anywhere}
+.ft h3{font-size:clamp(21px,2.3vw,26px);line-height:1;overflow-wrap:anywhere}
+.ft .ft-pres{font-size:16px;color:var(--tinta);font-style:normal}
+.ft .ft-pres b{font-weight:600}
+.ft .ft-v summary{color:var(--accion)}
+.ft .ft-v video{width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-m);background:#000;display:block;margin-top:10px}
 .ft .dur{justify-self:start;background:var(--celeste);color:var(--marino);font:800 italic 15px/1 var(--f-titulo);text-transform:uppercase;padding:6px 10px;transform:skewX(-10deg)}
 .ft p{font-size:15px;color:var(--tinta-suave)}
 .ft dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:4px 0 0;font-size:14px}
@@ -198,7 +213,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .pers video,.pers img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
 .pers figcaption{font-size:14px;color:var(--tinta-suave);padding:0 4px 4px}
 .pers figcaption b{display:block;color:var(--tinta);font:800 italic 18px/1.1 var(--f-titulo);text-transform:uppercase;margin-bottom:4px}
-.ft .ft-vid{width:calc(100% + 44px);margin:-22px -22px 4px;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-m) var(--r-m) 0 0;background:#000;display:block}
 .acc-extra{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
 .acc-extra figure{margin:0;display:grid;gap:10px;background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-l);padding:12px;align-content:start}
 .acc-extra video,.acc-extra img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
@@ -225,13 +239,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:900px){
   .hero-grid,.dest,.calc,.cont,.clientes,.acc{grid-template-columns:1fr}
-  .ft-grid{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr}
   .pasos{grid-template-columns:1fr}
   .pasos video{aspect-ratio:4/3}
   .sello{left:8px}
 }
 @media (max-width:560px){
-  .ft-grid,.vids{grid-template-columns:1fr}
+  .vids{grid-template-columns:1fr}
+  .ft-grid{padding:4px 14px}.ft{grid-template-columns:90px minmax(0,1fr);gap:14px}
   .top nav{display:none}
 }
 @media (prefers-reduced-motion:reduce){.lluvia{animation:none}.rv{transition:none}.btn{transition:none}html{scroll-behavior:auto}}
@@ -569,7 +584,14 @@ var XTRA={"Epoxacryl E-6000":"y 56 colores más para igualar","TOP Deportivo":"y
 function colores(f){var c=COL[f.n];if(!c)return '';
  return '<div class="sw"><span class="pr-t">Colores</span><ul>'+c.map(function(x){return '<li><i style="background:'+x[1]+'"></i>'+esc(x[0])+'</li>'}).join('')+(XTRA[f.n]?'<li class="sw-x">'+XTRA[f.n]+'</li>':'')+'</ul></div>';}
 var VID={"TOP Deportivo":"deportivo-rojo","Epoxacryl E-6000":"epoxacryl","TOP Tapagoteras Reforzado":"tapagoteras-espatula","TOP Reciclado de Llanta 5 años Secado Rápido":"reciclado-textura","TOP 10 años Aislante Térmico":"aislante-personaje"};
-function vid(f){var v=VID[f.n];return v?'<video class="ft-vid" controls muted loop playsinline preload="none" poster="media/'+v+'.jpg" src="media/'+v+'.mp4" aria-label="Video: '+esc(f.n)+'"></video>':''}
+function vid(f){var v=VID[f.n];return v?'<details class="ft-v"><summary>Ver video</summary><video controls playsinline preload="none" poster="media/'+v+'.jpg" src="media/'+v+'.mp4" aria-label="Video: '+esc(f.n)+'"></video></details>':''}
+// Foto del envase: lata oficial Comex; si no hay, foto propia o dibujo de balde.
+var IMG={"TOP Total Lluvia Torrencial 15 años":"top-total-lluvia-torrencial.jpg","TOP 10 años Aislante Térmico":"aislante-termico.webp","Roof Mastic Aislante Térmico 7 años":"roof-mastic.webp","TOP Reciclado de Llanta 5 años Secado Rápido":"top-reciclado-de-llantas.webp","TOP 3 años Secado Rápido Plus":"top-fibratado.webp","TOP Tapagoteras Reforzado":"top-tapagoteras-reforzado.webp","TOP Repelente Base Agua":"top-repelente-base-agua.webp","Epoxacryl E-6000":"epoxacryl.webp","TOP Deportivo":"top-deportivo.webp","Pintura Tráfico Secado Rápido Base Agua":"via-color-senalamiento-ba.webp","Vía Color Pintura Tráfico Base Solvente":"via-color-senalamiento-base-solvente.webp"};
+function pres(e){var t=String(e).replace(/\([^)]*(\)|$)/g,''),out=[],m,re=/(\d+(?:,\d+)?)\s*(L|kg)\b/g;while((m=re.exec(t))){var x=m[1]+' '+m[2];if(out.indexOf(x)<0)out.push(x)}return out.join(' · ')}
+function balde(f){var p=pres(f.e).split(' · '),t=esc(p[p.length>1?1:0]||''),n=/^TOP/i.test(f.n)?'TOP':/Roof Mastic/.test(f.n)?'ROOF MASTIC':/Sellatop/.test(f.n)?'SELLATOP':'COMEX';
+ return '<svg viewBox="0 0 140 160" role="img" aria-label="'+esc(f.n)+'"><path d="M30 34 Q70 -6 110 34" fill="none" stroke="#a9b4c0" stroke-width="4"/><ellipse cx="70" cy="36" rx="52" ry="11" fill="#f4f6f8" stroke="#c9d2dc" stroke-width="3"/><rect x="18" y="36" width="104" height="9" fill="#eef1f4"/><path d="M18 45 L26 146 Q70 158 114 146 L122 45Z" fill="#fff" stroke="#c9d2dc" stroke-width="3"/><path d="M21 76 L25 128 Q70 140 115 128 L119 76 Q70 88 21 76Z" fill="#002E5B"/><text x="70" y="70" text-anchor="middle" font-family="Arial" font-weight="900" font-size="15" fill="#27AAE2">Comex</text><text x="70" y="104" text-anchor="middle" font-family="Barlow Condensed,Arial" font-style="italic" font-weight="800" font-size="'+(n.length>6?13:20)+'" fill="#fff">'+n+'</text><text x="70" y="121" text-anchor="middle" font-family="Arial" font-weight="700" font-size="11" fill="#b9d3ea">'+t+'</text></svg>'}
+function foto(f){var i=IMG[f.n];if(!i)return '<div class="ft-foto"><div class="ft-flota">'+balde(f)+'</div></div>';
+ return /\.jpg$/.test(i)?'<div class="ft-foto ph"><img src="productos/'+i+'" alt="'+esc(f.n)+'" loading="lazy"></div>':'<div class="ft-foto"><div class="ft-flota"><img src="productos/'+i+'" alt="'+esc(f.n)+'" loading="lazy"></div></div>'}
 var PR={"TOP Reciclado de Llanta 5 años Secado Rápido":[["Blanco o rojo 19 L","7.046"],["Blanco o rojo 4 L","1.665"]],
 "TOP Tapagoteras Reforzado":[["4 L","2.069"],["1 L","660"]],
 "TOP Total 10 años":[["Blanco 19 L","7.816"],["Blanco 4 L","1.778"]]};
@@ -586,7 +608,7 @@ function row(k,v){return v?'<dt>'+k+'</dt><dd>'+esc(v)+'</dd>':''}
 cats.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='ft-c';b.textContent=c;b.setAttribute('aria-pressed',c===cur?'true':'false');b.onclick=function(){cur=c;[].forEach.call(cb.children,function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});draw()};cb.appendChild(b)});
 function draw(){
   g.innerHTML=F.filter(function(f){return cur==='Todos'||f.c===cur}).map(function(f){
-    return '<article class="ft">'+vid(f)+(f.d?'<span class="dur">'+esc(f.d.replace(' con mantenimiento',''))+'</span>':'')+'<h3>'+esc(f.n)+'</h3><p>'+esc(f.q)+'</p><dl>'+row('Rinde',f.r)+'</dl><details><summary>Manos, secado y envases</summary><dl>'+row('Manos',f.h)+row('Secado',f.s)+row('Dilución',f.di)+row('Envases',f.e)+'</dl></details>'+colores(f)+precio(f)+'<p class="desc">Consultá descuentos contado en mostrador.</p><div class="ft-links"><a href="https://drive.google.com/file/d/'+f.id+'/view" target="_blank" rel="noopener">Ver ficha (PDF)</a><a href="https://wa.me/59891333337?text='+encodeURIComponent('Hola La Casa del Impermeabilizante Colonia, quería consultar por '+f.n)+'" target="_blank" rel="noopener">Consultar</a></div></article>';
+    return '<article class="ft">'+foto(f)+'<div class="ft-i">'+(f.d?'<span class="dur">'+esc(f.d.replace(' con mantenimiento',''))+'</span>':'')+'<h3>'+esc(f.n)+'</h3><p class="ft-pres"><b>Presentaciones:</b> '+esc(pres(f.e))+'</p><p>'+esc(f.q)+'</p><dl>'+row('Rinde',f.r)+'</dl><details><summary>Manos, secado y envases</summary><dl>'+row('Manos',f.h)+row('Secado',f.s)+row('Dilución',f.di)+row('Envases',f.e)+'</dl></details>'+colores(f)+precio(f)+'<p class="desc">Consultá descuentos contado en mostrador.</p><div class="ft-links"><a href="https://drive.google.com/file/d/'+f.id+'/view" target="_blank" rel="noopener">Ver ficha (PDF)</a><a href="https://wa.me/59891333337?text='+encodeURIComponent('Hola La Casa del Impermeabilizante Colonia, quería consultar por '+f.n)+'" target="_blank" rel="noopener">Consultar</a></div>'+vid(f)+'</div></article>';
   }).join('');
 }
 draw();
