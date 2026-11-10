@@ -256,8 +256,40 @@ footer.band{padding-block:56px 40px}
 .ft-all{grid-column:1/-1;justify-self:center;padding:13px 22px;font-size:14px}
 .ft-none{color:var(--tinta-suave)}
 @media (max-width:860px){.ft-grid{grid-template-columns:1fr}}
+
+/* Cinta corrida */
+.cinta-mc{background:var(--rojo);border-bottom:3px solid var(--negro);overflow:hidden;padding:12px 0}
+.cinta-in{display:flex;width:max-content;animation:mc-correr 40s linear infinite}
+.cinta-mc:hover .cinta-in{animation-play-state:paused}
+.cinta-mc span{display:inline-flex;align-items:center;gap:1.1em;padding-right:1.1em;font:700 clamp(14px,1.6vw,17px)/1.2 var(--f-texto);letter-spacing:.08em;color:#fff;white-space:nowrap}
+.cinta-mc i{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--negro);color:#fff;flex:none}
+.cinta-mc i svg{width:14px;height:14px}
+@keyframes mc-correr{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cinta-in{animation:none;flex-wrap:wrap;width:auto;justify-content:center;row-gap:8px}}
+
+/* Promo Renner en el encabezado */
+.hero-marca{margin-top:clamp(16px,2.5vw,28px);position:relative}
+#inicio{padding-top:clamp(20px,3vw,36px)}
+.hero-marca .hero-logo{margin-bottom:0}
+.hero-marca svg{width:min(100%,340px)}
+.promo{margin-top:clamp(20px,2.5vw,28px);align-items:start}
+.hero .vigencia{background:var(--banda-sup);border-color:var(--banda-linea);color:var(--banda-tinta)}
+.hero .vigencia i{background:var(--rojo)}
+.hero .pct div{background:var(--banda-sup);border:1px solid var(--banda-linea)}
+.btn-xl{margin-top:24px;padding:20px 30px;font-size:19px;border-radius:14px;box-shadow:0 10px 28px -10px rgba(14,122,109,.8)}
+.btn-xl svg{width:26px;height:26px}
+.promo-precios{background:var(--banda-sup);border:1px solid var(--banda-linea);border-radius:var(--r-l);padding:clamp(18px,3vw,28px);min-width:0}
+.hero .precios caption,.hero .precios small,.hero .nota{color:var(--banda-suave)}
+.hero .precios td{border-bottom-color:var(--banda-linea)}
+.pr-dest{color:var(--rojo);font-size:19px}
+.ases{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);align-items:center}
+.ases h2 em{font-style:normal;color:var(--accion)}
+.local-card{color:var(--banda-tinta)}
+@media (max-width:860px){.ases{grid-template-columns:1fr}}
+@media (max-width:560px){.hero{padding-top:20px}.hero-top{display:none}.hero-marca{margin-top:4px}.hero-marca svg{width:62%}.hero-marca .hero-logo{margin-bottom:8px}.btn-xl{width:100%;justify-content:center;padding:18px 20px;font-size:18px}}
 </style>
 
+<div class="cinta-mc" role="marquee" aria-label="Aprovechá hasta 40% de descuento en pinturas Renner · No te quedes con la duda: consultá · Te asesoramos antes de venderte · Cyber INGCO y Lüsqtoff: últimos días, hasta el miércoles 11/11"><div class="cinta-in" aria-hidden="true"><span>APROVECHÁ HASTA 40% DE DESCUENTO EN PINTURAS RENNER<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>NO TE QUEDES CON LA DUDA: CONSULTÁ<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>TE ASESORAMOS ANTES DE VENDERTE<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>CYBER INGCO Y LÜSQTOFF: ÚLTIMOS DÍAS, HASTA EL MIÉRCOLES 11/11<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>APROVECHÁ HASTA 40% DE DESCUENTO EN PINTURAS RENNER<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>NO TE QUEDES CON LA DUDA: CONSULTÁ<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>TE ASESORAMOS ANTES DE VENDERTE<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>CYBER INGCO Y LÜSQTOFF: ÚLTIMOS DÍAS, HASTA EL MIÉRCOLES 11/11<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span></div></div>
 <header class="band hero" id="inicio">
   <div class="tex" aria-hidden="true"></div>
   <div class="wrap">
@@ -273,26 +305,38 @@ footer.band{padding-block:56px 40px}
         <a href="https://www.instagram.com/martincolor.ok/" target="_blank" rel="noopener">Instagram</a>
       </nav>
     </div>
-    <div class="hero-grid">
-      <div class="rv">
+    <div class="hero-marca rv">
         <div class="hero-logo"><svg width="100%" style="display:block;height:auto" xmlns="http://www.w3.org/2000/svg" viewBox="396 196 1212 684" role="img" aria-label="Martín Color"><path fill="#FC2803" d="M 1044.195312 326.113281 L 1070.238281 326.113281 C 1084.621094 326.113281 1096.277344 337.773438 1096.277344 352.15625 L 1096.277344 695.3125 C 1096.277344 709.695312 1084.621094 721.351562 1070.238281 721.351562 L 1050.289062 721.351562 C 1023.621094 721.351562 1001.777344 700.15625 1000.976562 673.5 L 992.113281 378.097656 C 992.113281 349.484375 1015.613281 326.113281 1044.195312 326.113281 M 1096.277344 233.59375 L 1096.277344 285.683594 C 1096.277344 300.066406 1084.621094 311.722656 1070.238281 311.722656 L 995.097656 311.722656 C 989.132812 311.722656 983.761719 315.347656 981.53125 320.882812 L 832.609375 690.46875 C 825.089844 709.132812 806.988281 721.351562 786.871094 721.351562 L 713.4375 721.351562 C 693.183594 721.351562 674.964844 709.050781 667.398438 690.265625 L 650.753906 648.953125 C 643.859375 631.839844 656.457031 613.179688 674.90625 613.179688 L 734.3125 613.179688 C 744.9375 613.179688 754.496094 606.726562 758.46875 596.871094 L 882.304688 289.523438 C 902.671875 238.988281 949.230469 207.554688 1003.714844 207.554688 L 1070.238281 207.554688 C 1084.621094 207.554688 1096.277344 219.210938 1096.277344 233.59375 M 507.972656 404.238281 L 507.972656 672.195312 C 507.972656 699.34375 485.964844 721.351562 458.8125 721.351562 L 452.96875 721.351562 C 425.820312 721.351562 403.808594 699.34375 403.808594 672.195312 L 403.808594 352.15625 C 403.808594 337.773438 415.46875 326.113281 429.851562 326.113281 C 472.816406 326.113281 507.972656 361.269531 507.972656 404.238281 M 669.390625 598.773438 L 648.125 598.773438 C 637.5 598.773438 627.941406 592.320312 623.96875 582.464844 L 521.449219 328.019531 C 517.476562 318.167969 507.917969 311.710938 497.292969 311.710938 L 429.851562 311.710938 C 415.46875 311.710938 403.808594 300.050781 403.808594 285.671875 L 403.808594 256.714844 C 403.808594 229.5625 425.820312 207.554688 452.96875 207.554688 L 496.371094 207.554688 C 550.859375 207.554688 597.425781 238.988281 617.785156 289.519531 L 715.253906 531.425781 C 721.515625 546.953125 721.246094 567.1875 711.894531 581.027344 C 702.476562 594.964844 686.207031 598.78125 669.390625 598.773438 "></path><path fill="#FC2803" d="M 1113.308594 617.183594 L 1515.269531 617.183594 C 1515.777344 617.183594 1516.191406 617.597656 1516.191406 618.105469 L 1516.191406 659.585938 C 1516.191406 693.699219 1488.535156 721.351562 1454.421875 721.351562 L 1049.558594 721.351562 C 1049.050781 721.351562 1048.636719 720.941406 1048.636719 720.429688 L 1048.636719 669.265625 C 1048.636719 640.621094 1077.726562 617.183594 1113.308594 617.183594 M 1515.640625 265.84375 L 1515.640625 310.800781 C 1515.640625 311.308594 1515.199219 311.722656 1514.65625 311.722656 L 993.097656 311.722656 C 992.554688 311.722656 992.113281 311.308594 992.113281 310.800781 L 992.113281 290.53125 C 992.113281 244.894531 1031.894531 207.554688 1080.515625 207.554688 L 1453.539062 207.554688 C 1487.835938 207.554688 1515.640625 233.652344 1515.640625 265.84375 "></path><path fill="#F0E7D8" d="M 511 806.460938 L 519.695312 806.460938 L 519.695312 872.445312 L 504.023438 872.445312 L 502.304688 815.136719 C 502.304688 810.359375 506.226562 806.460938 511 806.460938 M 519.695312 786.664062 L 519.695312 804.054688 L 501.15625 804.054688 L 473.597656 872.445312 L 450.183594 872.445312 L 442.90625 854.386719 L 462.199219 854.386719 L 483.972656 800.351562 C 487.371094 791.914062 495.144531 786.664062 504.242188 786.664062 Z M 421.476562 815.15625 L 421.476562 872.445312 L 404.085938 872.445312 L 404.085938 806.460938 L 412.78125 806.460938 C 417.5625 806.460938 421.476562 810.371094 421.476562 815.15625 M 448.425781 851.980469 L 441.941406 851.980469 L 422.628906 804.054688 L 404.085938 804.054688 L 404.085938 786.664062 L 419.539062 786.664062 C 428.636719 786.664062 436.410156 791.914062 439.808594 800.351562 L 456.082031 840.738281 C 457.128906 843.328125 456.808594 846.046875 455.246094 848.355469 C 453.671875 850.683594 451.234375 851.980469 448.425781 851.980469 "></path><path fill="#F0E7D8" d="M 581.351562 804.722656 L 558.691406 804.722656 L 565.964844 786.664062 L 592.753906 786.664062 L 613.335938 837.753906 L 605.96875 837.753906 C 599 837.753906 593.042969 833.730469 590.4375 827.269531 Z M 627.316406 872.445312 L 608.640625 872.445312 L 602.636719 857.550781 L 558.671875 857.550781 L 562.3125 848.511719 C 562.324219 848.488281 562.332031 848.464844 562.339844 848.4375 C 564.433594 843.328125 569.164062 840.15625 574.683594 840.15625 L 614.304688 840.160156 Z M 571.867188 818.378906 L 550.078125 872.445312 L 531.402344 872.445312 L 557.722656 807.128906 L 564.207031 807.128906 C 567.015625 807.128906 569.457031 808.425781 571.03125 810.753906 C 572.589844 813.066406 572.910156 815.78125 571.867188 818.378906 "></path><path fill="#F0E7D8" d="M 724.921875 872.445312 L 706.246094 872.445312 L 697.96875 851.898438 C 696.925781 849.308594 697.246094 846.589844 698.804688 844.277344 C 700.378906 841.953125 702.820312 840.652344 705.628906 840.652344 L 712.113281 840.652344 Z M 656.261719 815.15625 L 656.261719 872.445312 L 638.871094 872.445312 L 638.871094 806.460938 L 647.566406 806.460938 C 652.347656 806.460938 656.257812 810.371094 656.261719 815.15625 M 707.261719 820.859375 L 707.261719 804.058594 L 638.871094 804.058594 L 638.871094 786.664062 L 710.949219 786.664062 C 718.476562 786.664062 724.652344 792.839844 724.652344 800.363281 L 724.652344 824.550781 C 724.652344 832.074219 718.476562 838.25 710.949219 838.25 L 658.664062 838.25 L 658.664062 829.554688 C 658.664062 824.773438 662.574219 820.859375 667.359375 820.859375 Z M 707.261719 820.859375 "></path><path fill="#F0E7D8" d="M 786.160156 815.15625 L 786.160156 872.445312 L 768.769531 872.445312 L 768.769531 806.457031 L 777.464844 806.457031 C 782.246094 806.457031 786.160156 810.371094 786.160156 815.15625 M 734.570312 786.664062 L 820.355469 786.664062 L 820.355469 804.054688 L 734.570312 804.054688 Z M 734.570312 786.664062 "></path><path fill="#F0E7D8" d="M 831.992188 806.460938 L 849.382812 806.460938 L 849.382812 872.445312 L 831.992188 872.445312 Z M 849.382812 786.664062 L 849.382812 795.359375 C 849.382812 800.144531 845.46875 804.058594 840.6875 804.058594 L 831.992188 804.058594 L 831.992188 786.664062 Z M 849.382812 786.664062 "></path><path fill="#F0E7D8" d="M 953.578125 786.664062 L 953.578125 852.652344 L 944.882812 852.652344 C 940.097656 852.652344 936.1875 848.738281 936.1875 843.957031 L 936.1875 786.664062 Z M 930.164062 855.054688 L 953.578125 855.054688 L 953.578125 872.445312 L 933.253906 872.445312 C 924.15625 872.445312 916.382812 867.195312 912.984375 858.761719 L 890.941406 804.054688 L 867.527344 804.054688 L 867.527344 786.664062 L 887.851562 786.664062 C 896.949219 786.664062 904.722656 791.914062 908.121094 800.351562 Z M 884.917969 815.15625 L 884.917969 872.445312 L 867.527344 872.445312 L 867.527344 806.460938 L 876.222656 806.460938 C 881.003906 806.460938 884.917969 810.371094 884.917969 815.15625 "></path><path fill="#F0E7D8" d="M 1053.234375 855.054688 L 1110.527344 855.054688 L 1110.527344 872.445312 L 1044.542969 872.445312 L 1044.542969 863.75 C 1044.542969 858.96875 1048.453125 855.054688 1053.234375 855.054688 M 1042.136719 815.128906 L 1042.136719 872.445312 L 1038.445312 872.445312 C 1030.921875 872.445312 1024.746094 866.269531 1024.746094 858.746094 L 1024.746094 806.460938 L 1033.441406 806.460938 C 1038.210938 806.460938 1042.136719 810.351562 1042.136719 815.128906 M 1110.527344 786.664062 L 1110.527344 804.054688 L 1024.746094 804.054688 L 1024.746094 800.363281 C 1024.746094 792.839844 1030.921875 786.664062 1038.445312 786.664062 Z M 1110.527344 786.664062 "></path><path fill="#F0E7D8" d="M 1142.007812 855.054688 L 1210.394531 855.054688 L 1210.394531 858.746094 C 1210.394531 866.269531 1204.21875 872.445312 1196.695312 872.445312 L 1138.3125 872.445312 C 1130.789062 872.445312 1124.613281 866.269531 1124.613281 858.746094 L 1124.613281 806.460938 L 1133.308594 806.460938 C 1138.09375 806.460938 1142.007812 810.371094 1142.007812 815.15625 Z M 1210.394531 800.363281 L 1210.394531 852.652344 L 1201.699219 852.652344 C 1196.917969 852.652344 1193.007812 848.738281 1193.007812 843.953125 L 1193.007812 804.054688 L 1124.613281 804.054688 L 1124.613281 800.363281 C 1124.613281 792.839844 1130.789062 786.664062 1138.3125 786.664062 L 1196.695312 786.664062 C 1204.21875 786.664062 1210.394531 792.839844 1210.394531 800.363281 "></path><path fill="#F0E7D8" d="M 1314.800781 855.054688 L 1314.800781 872.445312 L 1248.8125 872.445312 L 1248.8125 863.75 C 1248.8125 858.96875 1252.726562 855.054688 1257.507812 855.054688 Z M 1229.019531 786.664062 L 1246.410156 786.664062 L 1246.410156 872.445312 L 1229.019531 872.445312 Z M 1229.019531 786.664062 "></path><path fill="#F0E7D8" d="M 1343.707031 855.054688 L 1412.09375 855.054688 L 1412.09375 858.746094 C 1412.09375 866.269531 1405.917969 872.445312 1398.398438 872.445312 L 1340.015625 872.445312 C 1332.492188 872.445312 1326.316406 866.269531 1326.316406 858.746094 L 1326.316406 806.460938 L 1335.007812 806.460938 C 1339.792969 806.460938 1343.707031 810.371094 1343.707031 815.15625 Z M 1412.09375 800.363281 L 1412.09375 852.652344 L 1403.402344 852.652344 C 1398.617188 852.652344 1394.707031 848.738281 1394.707031 843.953125 L 1394.707031 804.054688 L 1326.316406 804.054688 L 1326.316406 800.363281 C 1326.316406 792.839844 1332.492188 786.664062 1340.015625 786.664062 L 1398.398438 786.664062 C 1405.917969 786.664062 1412.09375 792.839844 1412.09375 800.363281 "></path><path fill="#F0E7D8" d="M 1515.914062 872.445312 L 1497.238281 872.445312 L 1488.960938 851.898438 C 1487.914062 849.308594 1488.238281 846.589844 1489.796875 844.277344 C 1491.371094 841.953125 1493.8125 840.652344 1496.617188 840.652344 L 1503.105469 840.652344 Z M 1447.253906 815.15625 L 1447.253906 872.445312 L 1429.863281 872.445312 L 1429.863281 806.460938 L 1438.558594 806.460938 C 1443.339844 806.460938 1447.25 810.371094 1447.253906 815.15625 M 1498.25 820.859375 L 1498.25 804.058594 L 1429.863281 804.058594 L 1429.863281 786.664062 L 1501.941406 786.664062 C 1509.46875 786.664062 1515.644531 792.839844 1515.644531 800.363281 L 1515.644531 824.550781 C 1515.644531 832.074219 1509.46875 838.25 1501.941406 838.25 L 1449.65625 838.25 L 1449.65625 829.554688 C 1449.65625 824.773438 1453.566406 820.859375 1458.351562 820.859375 Z M 1498.25 820.859375 "></path><circle cx="1566" cy="236" r="30.5" fill="none" stroke="#FC2803" stroke-width="7.0"></circle><path fill="#FC2803" d="M1555.0 219.0h12.0a9.0 9.0 0 0 1 0 18.0h-6.0v16.0h-6.0zM1561.0 224.0v8.0h6.0a4.0 4.0 0 0 0 0 -8.0z"></path><path fill="#FC2803" d="M1564.0 236.0h7.0l8.0 17.0h-7.0z"></path></svg></div>
-        <p class="eyebrow">Pinturas y herramientas · Colonia del Sacramento</p>
-        <h1 style="margin-top:16px">Te asesoramos <em>antes</em> de venderte.</h1>
-        <p class="lead">Contanos qué vas a pintar o qué trabajo tenés por delante. Te decimos qué producto conviene, cuánto necesitás y cómo aplicarlo. La confianza es fundamental.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-wa" href="https://wa.me/59891333337?text=Hola%20Mart%C3%ADn%20Color%2C%20quer%C3%ADa%20consultar%20por%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg> Escribinos al 091 333 337</a>
-          <a class="btn btn-sec" href="#renner">Ver promos de la semana</a>
+    </div>
+    <div class="hero-grid promo" id="renner">
+    <div class="rv">
+        <p class="eyebrow">Promo Renner · Pinturas</p>
+        <h1 style="margin-top:14px">Pintá la casa <em>antes</em> del verano.</h1>
+        <p class="lead" style="margin-top:14px">Descuentos en toda la línea Rekolor y en los esmaltes Renner, en todos los colores.</p>
+        <span class="vigencia"><i></i>Vigente hasta el 20 de diciembre de 2026</span>
+        <a class="btn btn-wa btn-xl" href="https://wa.me/59891333337?text=Hola%20Mart%C3%ADn%20Color%2C%20quer%C3%ADa%20consultar%20por%20la%20promo%20de%20pinturas%20Renner" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg> Consultá por WhatsApp</a>
+        <div class="pct">
+          <div><b>40%</b><span>Rekolor Gold</span></div>
+          <div><b>30%</b><span>Rekolor Pro</span></div>
+          <div><b>25%</b><span>Rekolor Unique</span></div>
+          <div><b>25%</b><span>Esmaltes Renner</span></div>
         </div>
       </div>
-      <aside class="hero-card rv" aria-label="Lo que encontrás en Martín Color">
-        <h3>En el local de Atanasio Sierra 602</h3>
-        <ul>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="15" height="7" rx="1.5"/><path d="M18 6.5h2.5V12H11v3"/><rect x="9.5" y="15" width="3" height="6" rx="1"/></svg><div><b>Pinturas Renner, Glidden y Comex</b><span>Látex, esmaltes, membranas, piscinas y fachadas.</span></div></li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></svg><div><b>Colores a medida</b><span>Preparamos tu color en la máquina tintométrica.</span></div></li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15l2-5.5A2 2 0 0 1 6.9 8h10.2a2 2 0 0 1 1.9 1.5L21 15v3h-2.5"/><path d="M5.5 18H3v-3h18"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/></svg><div><b>Línea automotriz PPG</b><span>Fondos, barnices y masillas para talleres de chapa y pintura.</span></div></li>
-          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9.4 9.4a2.1 2.1 0 0 1-3-3z"/><path d="M14.7 6.3L17 4l3 3-2.3 2.3"/></svg><div><b>Herramientas INGCO, Lüsqtoff y Wadfow</b><span>Con garantía oficial de 1 a 3 años.</span></div></li>
-        </ul>
-      </aside>
+      <div class="promo-precios rv">
+      <table class="precios">
+        <caption>Precios de la promo, en pesos</caption>
+        <tbody>
+          <tr class="dest"><td>Membrana líquida Renner 20 kg<small>llevá 2 y ahorrás</small></td><td><span class="pr-dest">2x1 $6.990</span><small>1 unidad $3.990</small></td></tr>
+          <tr><td>Fondo preparador base agua 16 L</td><td>$4.801</td></tr>
+          <tr><td>Cielo raso Renner 18 L</td><td>$3.990</td></tr>
+          <tr><td>Látex ACR mate blanco 16 L</td><td>$2.650</td></tr>
+          <tr><td>Cielo raso Glidden 18 L<small>línea económica</small></td><td>$1.850</td></tr>
+          <tr><td>Esmalte sintético blanco brillante 900 ml</td><td>$399</td></tr>
+          <tr class="dest"><td>Esmalte poliuretano para piscinas<small>consultá precio y rendimiento según los m²</small></td><td><span class="pr-dest">25% OFF</span></td></tr>
+        </tbody>
+      </table>
+      <p class="nota">Precios con IVA, válidos hasta el 20/12/2026 o hasta agotar stock. Para Rekolor y esmaltes, el precio final depende de la medida y el color.</p>
+      </div>
     </div>
     <div class="marcas rv" aria-label="Marcas que vendemos">
       <span>Trabajamos con</span>
@@ -304,47 +348,29 @@ footer.band{padding-block:56px 40px}
 <main>
 <section id="asesoramiento">
   <div class="wrap">
-    <div class="head rv">
-      <p class="eyebrow">Por qué Martín Color</p>
-      <h2>Comprás lo justo, del producto correcto.</h2>
-      <p class="lead">Una pintura bien elegida rinde más y dura más. Antes de cobrarte, te ayudamos a acertar.</p>
+    <div class="ases">
+      <div class="head rv" style="margin:0">
+        <p class="eyebrow">Por qué Martín Color</p>
+        <h2>Te asesoramos <em>antes</em> de venderte.</h2>
+        <p class="lead">Contanos qué vas a pintar o qué trabajo tenés por delante. Te decimos qué producto conviene, cuánto necesitás y cómo aplicarlo. La confianza es fundamental.</p>
+        <div class="hero-ctas" style="margin-top:12px">
+          <a class="btn btn-wa" href="https://wa.me/59891333337?text=Hola%20Mart%C3%ADn%20Color%2C%20quer%C3%ADa%20consultar%20por%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg> Escribinos al 091 333 337</a>
+        </div>
+      </div>
+      <aside class="hero-card local-card rv" aria-label="Lo que encontrás en Martín Color">
+        <h3>En el local de Atanasio Sierra 602</h3>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="15" height="7" rx="1.5"/><path d="M18 6.5h2.5V12H11v3"/><rect x="9.5" y="15" width="3" height="6" rx="1"/></svg><div><b>Pinturas Renner, Glidden y Comex</b><span>Látex, esmaltes, membranas, piscinas y fachadas.</span></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></svg><div><b>Colores a medida</b><span>Preparamos tu color en la máquina tintométrica.</span></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15l2-5.5A2 2 0 0 1 6.9 8h10.2a2 2 0 0 1 1.9 1.5L21 15v3h-2.5"/><path d="M5.5 18H3v-3h18"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/></svg><div><b>Línea automotriz PPG</b><span>Fondos, barnices y masillas para talleres de chapa y pintura.</span></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9.4 9.4a2.1 2.1 0 0 1-3-3z"/><path d="M14.7 6.3L17 4l3 3-2.3 2.3"/></svg><div><b>Herramientas INGCO, Lüsqtoff y Wadfow</b><span>Con garantía oficial de 1 a 3 años.</span></div></li>
+        </ul>
+      </aside>
     </div>
-    <div class="bene">
+    <div class="bene" style="margin-top:40px">
       <article class="rv"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><h3>Asesoramiento antes de la compra</h3><p>Te preguntamos la superficie, el estado y el uso. Con los metros te calculamos litros y manos, sin que sobre ni falte.</p></article>
       <article class="rv"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h3>Marcas con garantía</h3><p>Renner y PPG en pinturas. INGCO 2 años, Lüsqtoff Black Series 3 años y Wadfow 1 año en herramientas.</p></article>
       <article class="rv"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 14.5h4"/></svg><h3>Hasta 6 cuotas sin recargo</h3><p>Pagando en el local con OCA o Visa. También giro, transferencia y envíos a todo el país.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="renner" style="padding-top:0">
-  <div class="wrap renner">
-    <div class="rv">
-      <p class="eyebrow">Promo Renner</p>
-      <h2 style="margin-top:14px">Pintá la casa antes del verano.</h2>
-      <p class="lead" style="margin-top:14px">Descuentos en toda la línea Rekolor y en los esmaltes Renner, en todos los colores.</p>
-      <span class="vigencia"><i></i>Vigente hasta el 20 de diciembre de 2026</span>
-      <div class="pct">
-        <div><b>40%</b><span>Rekolor Gold</span></div>
-        <div><b>30%</b><span>Rekolor Pro</span></div>
-        <div><b>25%</b><span>Rekolor Unique</span></div>
-        <div><b>25%</b><span>Esmaltes Renner</span></div>
-      </div>
-    </div>
-    <div class="rv" style="min-width:0">
-      <table class="precios">
-        <caption>Precios de la promo, en pesos</caption>
-        <tbody>
-          <tr class="dest"><td>Membrana líquida Renner 20 kg<small>llevá 2 y ahorrás</small></td><td><span style="color:var(--acento,#d42200);font-size:19px">2x1 $6.990</span><small>1 unidad $3.990</small></td></tr>
-          <tr><td>Fondo preparador base agua 16 L</td><td>$4.801</td></tr>
-          <tr><td>Cielo raso Renner 18 L</td><td>$3.990</td></tr>
-          <tr><td>Látex ACR mate blanco 16 L</td><td>$2.650</td></tr>
-          <tr><td>Cielo raso Glidden 18 L<small>línea económica</small></td><td>$1.850</td></tr>
-          <tr><td>Esmalte sintético blanco brillante 900 ml</td><td>$399</td></tr>
-          <tr class="dest"><td>Esmalte poliuretano para piscinas<small>consultá precio y rendimiento según los m²</small></td><td><span style="color:var(--acento,#d42200);font-size:19px">25% OFF</span></td></tr>
-        </tbody>
-      </table>
-      <p class="nota">Precios con IVA, válidos hasta el 20/12/2026 o hasta agotar stock. Para Rekolor y esmaltes, el precio final depende de la medida y el color.</p>
     </div>
   </div>
 </section>
@@ -353,10 +379,10 @@ footer.band{padding-block:56px 40px}
   <div class="wrap">
     <div class="cyber-head">
       <div class="head rv" style="margin:0">
-        <p class="eyebrow">Cyber de herramientas</p>
+        <p class="eyebrow">Cyber de herramientas · Últimos días</p>
         <h2>Catálogo Cyber: 68 ofertas en herramientas.</h2>
       </div>
-      <p class="cuenta rv" id="cuenta">Del 2 al <b>9 de noviembre</b> de 2026</p>
+      <p class="cuenta rv" id="cuenta">INGCO y Lüsqtoff: últimos días, <b>hasta el miércoles 11/11</b></p>
     </div>
     <div class="marcas-cyber">
       <article class="mc-card rv"><span class="off">15–25%</span><h3>Lüsqtoff Línea Negra</h3><p>Más de 40 herramientas. Black Series con 3 años de garantía.</p></article>
@@ -371,7 +397,7 @@ footer.band{padding-block:56px 40px}
     </div>
     <div class="cat" id="cat"></div>
     <dialog id="zoom" aria-label="Flyer ampliado"><button type="button" class="z-x" id="zx" aria-label="Cerrar">✕</button><img id="zimg" alt=""><a class="btn btn-wa" id="zwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg> Consultar por WhatsApp</a></dialog>
-    <p class="cuotas rv">Precios en dólares. En el local, hasta 6 cuotas sin recargo con OCA o Visa. Tocá un flyer para verlo grande. Precios en dólares, IVA incluido, válidos hasta el 9/11 o hasta agotar stock.</p>
+    <p class="cuotas rv">Precios en dólares. En el local, hasta 6 cuotas sin recargo con OCA o Visa. Tocá un flyer para verlo grande. Precios en dólares, IVA incluido, válidos hasta el miércoles 11/11 o hasta agotar stock.</p>
   </div>
 </section>
 
@@ -383,7 +409,7 @@ footer.band{padding-block:56px 40px}
       <p class="lead">Videos de los productos que tenemos en el local, filmados en Martín Color. Hay muchos más en nuestro Instagram.</p>
     </div>
     <div class="vids">
-      <figure class="rv v-h"><video controls preload="metadata" playsinline poster="videos/lusq.jpg" src="videos/lusq.mp4"></video><figcaption><b>Cyber Lüsqtoff Línea Negra</b>Del 2 al 9 de noviembre, de 15% a 25% off.</figcaption></figure>
+      <figure class="rv v-h"><video controls preload="metadata" playsinline poster="videos/lusq.jpg" src="videos/lusq.mp4"></video><figcaption><b>Cyber Lüsqtoff Línea Negra</b>Hasta el miércoles 11/11, de 15% a 25% off.</figcaption></figure>
       <figure class="rv v-v"><video controls preload="metadata" playsinline poster="videos/yeso.jpg" src="videos/yeso.mp4"></video><figcaption><b>Atornillador para yeso a batería INGCO</b>Carga automática de tornillos, 20 V.</figcaption></figure>
         </div>
     <div class="oferta rv">
@@ -514,7 +540,7 @@ document.getElementById('zx').addEventListener('click', () => zoom.close ? zoom.
 zoom.addEventListener('click', (e) => { if (e.target === zoom) zoom.close(); });
 
 // Si el Cyber ya terminó, se avisa en vez de mostrar fechas vencidas.
-const fin = new Date('2026-11-10T00:00:00-03:00');
+const fin = new Date('2026-11-12T00:00:00-03:00');
 if (Date.now() >= fin.getTime()) {
   document.getElementById('cuenta').innerHTML = 'El Cyber terminó. <b>Preguntanos</b> por las ofertas vigentes.';
 }
