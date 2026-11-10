@@ -1,3 +1,4 @@
 # martincolor.github.io
 
-Sitio de La Casa del Impermeabilizante Colonia (productos Comex). Página estática: `index.html` + `media/`.
+- `/` — Martín Color (pinturas y herramientas): `index.html`, `flyers/`, `videos/`, `horario.jpg`.
+- `/impermeabilizante/` — La Casa del Impermeabilizante Colonia.

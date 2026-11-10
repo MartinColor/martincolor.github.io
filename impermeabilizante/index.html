@@ -1,0 +1,602 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta property="og:title" content="La Casa del Impermeabilizante Colonia"><meta property="og:description" content="Toda la línea Comex TOP para techos, azoteas y paredes en Colonia del Sacramento. Calculá cuántos baldes lleva tu techo y consultanos por WhatsApp."><meta property="og:image" content="https://martincolor.github.io/impermeabilizante/og.jpg"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>La Casa del Impermeabilizante Colonia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: bandas azul marino (hero, cálculo, contacto) que alternan con bandas claras; la línea horizontal del logo ("el techo plano") se repite como regla bajo cada título. */
+:root{
+  --marino:#002E5B; --celeste:#27AAE2; --blanco:#ffffff;
+  --fondo:#f2f6fa; --superficie:#ffffff; --tinta:#0b2340; --tinta-suave:#4a6079; --linea:#d4e0ec;
+  --accion:#1b8fc4; --whatsapp:#0e7a6d;
+  --banda:#002E5B; --banda-tinta:#ffffff; --banda-suave:#b9d3ea; --banda-sup:#0a3d70; --banda-linea:#1f4f80;
+  --f-titulo:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-texto:"Barlow",Arial,sans-serif;
+  --r-m:10px; --r-l:18px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --fondo:#06172b; --superficie:#0c2340; --tinta:#e8f1fa; --tinta-suave:#a5bbd2; --linea:#1d3a5e; --accion:#4cc0f0;
+  --banda:#001a36; --banda-sup:#062a50; --banda-linea:#173f69; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --fondo:#06172b; --superficie:#0c2340; --tinta:#e8f1fa; --tinta-suave:#a5bbd2; --linea:#1d3a5e; --accion:#4cc0f0;
+  --banda:#001a36; --banda-sup:#062a50; --banda-linea:#173f69; color-scheme:dark }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--tinta);font:400 17px/1.6 var(--f-texto);margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(56px,9vw,100px)}
+h1,h2,h3{font-family:var(--f-titulo);font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:.98;margin:0;text-wrap:balance}
+h2{font-size:clamp(34px,5vw,56px)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--celeste);outline-offset:3px;border-radius:4px}
+.eyebrow{font:700 13px/1.2 var(--f-texto);letter-spacing:.16em;text-transform:uppercase;color:var(--accion)}
+.band .eyebrow{color:var(--celeste)}
+.lead{max-width:60ch;color:var(--tinta-suave);font-size:18px}
+.band .lead{color:var(--banda-suave)}
+.head{display:grid;gap:14px;margin-bottom:40px}
+/* la línea del logo: techo plano */
+.techo{display:block;height:7px;width:min(220px,40%);background:var(--celeste);transform:skewX(-20deg);margin-top:4px}
+.band{background:var(--banda);color:var(--banda-tinta);position:relative;overflow:hidden}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:var(--r-m);font:700 16px/1 var(--f-texto);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--whatsapp);color:#fff}
+.btn-cel{background:var(--celeste);color:var(--marino)}
+.btn-sec{border-color:currentColor;color:inherit;background:transparent}
+
+/* Barra superior */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;position:relative;z-index:2}
+.marca{display:grid;justify-items:end;gap:2px}
+.top img{width:min(560px,86vw);height:auto;display:block}
+.ciudad{font:800 italic clamp(20px,2.6vw,32px)/1 var(--f-titulo);letter-spacing:.32em;text-transform:uppercase;color:var(--celeste);padding-right:4px}
+.top nav{display:flex;gap:22px;flex-wrap:wrap;font:600 14px/1 var(--f-texto);letter-spacing:.08em;text-transform:uppercase}
+.top nav a{text-decoration:none;color:var(--banda-suave)}
+.top nav a:hover{color:#fff}
+
+/* Hero */
+.hero{padding-block:clamp(28px,5vw,48px) clamp(56px,8vw,96px)}
+.lluvia{position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:repeating-linear-gradient(105deg,transparent 0 22px,rgba(39,170,226,.55) 22px 23px,transparent 23px 61px);background-size:200px 200px;animation:llueve 1.6s linear infinite}
+@keyframes llueve{to{background-position:-60px 200px}}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,64px);align-items:center;margin-top:clamp(36px,6vw,64px);position:relative;z-index:1}
+.hero h1{font-size:clamp(30px,4.4vw,56px)}
+.hero h1 em{font-style:inherit;color:var(--celeste)}
+.hero .lead{margin-top:22px;font-size:19px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-vid{margin:0;justify-self:center;width:min(100%,430px);position:relative}
+.hero-vid video{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-l);display:block;background:#000;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.sello{position:absolute;left:-14px;bottom:24px;background:var(--celeste);color:var(--marino);font:800 italic 22px/1 var(--f-titulo);text-transform:uppercase;padding:12px 16px;transform:skewX(-10deg)}
+.sello b{display:block;font-size:40px}
+.datos{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;font-size:15px;color:var(--banda-suave)}
+.datos b{color:#fff;font-weight:600}
+
+/* Destacado */
+.dest-par{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.dest-pers figcaption{font-weight:700;color:var(--accion)}
+.dest{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}
+.dest-vid{margin:0;display:grid;gap:10px;justify-self:center;width:min(100%,400px)}
+.dest-vid video{width:100%;aspect-ratio:9/16;max-height:78vh;object-fit:cover;border-radius:var(--r-l);background:#000;display:block}
+.dest-vid figcaption{font-size:14px;color:var(--tinta-suave)}
+.dest ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.dest li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.dest li svg{width:22px;height:22px;color:var(--accion);margin-top:3px}
+.precio{margin-top:28px;display:grid;gap:6px;padding:22px 24px;border-radius:var(--r-m);background:var(--superficie);border:1px solid var(--linea);font-variant-numeric:tabular-nums}
+.precio .lista{color:var(--tinta-suave);font-size:15px}
+.precio .final{font:800 italic clamp(38px,5vw,52px)/1 var(--f-titulo);color:var(--marino)}
+:root[data-theme="dark"] .precio .final{color:var(--celeste)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .precio .final{color:var(--celeste)}}
+.precio small{color:var(--tinta-suave);font-size:14px}
+
+/* Calculadora */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.calc form{display:grid;gap:18px;background:var(--banda-sup);border:1px solid var(--banda-linea);border-radius:var(--r-l);padding:clamp(20px,3vw,32px)}
+.calc label{display:grid;gap:8px;font-weight:600;font-size:15px}
+.calc input,.calc select{font:600 18px/1.2 var(--f-texto);padding:13px 14px;border-radius:var(--r-m);border:1.5px solid var(--banda-linea);background:var(--banda);color:#fff;width:100%}
+.medidas{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end}
+.medidas span{padding-bottom:14px;color:var(--banda-suave)}
+.tipo{display:flex;flex-wrap:wrap;gap:8px}
+.tipo label{display:flex;gap:8px;align-items:center;font-weight:500;background:var(--banda);border:1.5px solid var(--banda-linea);padding:10px 12px;border-radius:var(--r-m);cursor:pointer}
+.tipo input{width:auto}
+.res{display:grid;gap:18px}
+.res .num{font:800 italic clamp(64px,10vw,120px)/.9 var(--f-titulo);color:var(--celeste);font-variant-numeric:tabular-nums}
+.res .num small{font-size:.32em;color:#fff;margin-left:8px}
+.res p{color:var(--banda-suave)}
+.res .detalle{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px;border-top:1px solid var(--banda-linea);padding-top:16px;font-variant-numeric:tabular-nums}
+.res .detalle dt{color:var(--banda-suave)}
+.res .detalle dd{margin:0;font-weight:600}
+.nota-b{font-size:13px;color:var(--banda-suave)}
+
+/* Pasos */
+.pasos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0;padding:0;list-style:none;counter-reset:p}
+.pasos li{display:grid;gap:14px;align-content:start}
+.pasos video{width:100%;aspect-ratio:9/12;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
+.pasos h3{font-size:30px;display:flex;gap:12px;align-items:baseline}
+.pasos h3::before{counter-increment:p;content:counter(p);color:var(--accion);font-size:46px}
+.pasos p{color:var(--tinta-suave);font-size:16px}
+
+/* Productos y fichas */
+.ft-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.ft-c{background:transparent;color:var(--tinta);border:1.5px solid var(--linea);border-radius:999px;padding:10px 16px;font:600 14px/1 var(--f-texto);cursor:pointer}
+.ft-c[aria-pressed="true"]{background:var(--marino);border-color:var(--marino);color:#fff}
+.ft-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ft{background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-m);padding:22px;display:grid;gap:10px;align-content:start}
+.ft h3{font-size:25px;line-height:1}
+.ft .dur{justify-self:start;background:var(--celeste);color:var(--marino);font:800 italic 15px/1 var(--f-titulo);text-transform:uppercase;padding:6px 10px;transform:skewX(-10deg)}
+.ft p{font-size:15px;color:var(--tinta-suave)}
+.ft dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:4px 0 0;font-size:14px}
+.ft dt{font-weight:700}
+.ft dd{margin:0;color:var(--tinta-suave)}
+.ft details{font-size:14px}
+.ft summary{cursor:pointer;font-weight:700}
+.ft details dl{margin-top:10px}
+.ft .sw{display:grid;gap:8px}
+.ft .sw ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 12px}
+.ft .sw li{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--tinta-suave)}
+.ft .sw i{width:22px;height:22px;border-radius:50%;border:1px solid var(--linea);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);display:block}
+.ft .sw .sw-x{font-style:italic}
+.ft .pr{border-top:1px solid var(--linea);padding-top:10px;display:grid;gap:6px}
+.ft .pr-t{font:700 11px/1 var(--f-texto);letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-suave)}
+.ft .pr ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ft .pr li{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.ft .pr li b{font-size:17px;color:var(--tinta);white-space:nowrap}
+.ft .pr-esp{font-size:15px;color:var(--tinta)}
+.ft .pr-wa{font-weight:700;color:#128C4A;text-decoration:none;border-bottom:2px solid currentColor;justify-self:start}
+.ft .desc{font-weight:700;color:var(--accion);font-size:14px}
+.ft-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:6px;font:700 15px/1.2 var(--f-texto)}
+.ft-links a{text-decoration:none;border-bottom:2px solid var(--celeste)}
+
+/* Accesorios */
+.acc{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,4vw,56px);align-items:center;background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-l);padding:clamp(20px,4vw,40px)}
+.acc img{width:100%;max-width:300px;height:auto;justify-self:center;border-radius:var(--r-m)}
+.medidas-b{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.medidas-b span{border:1.5px solid var(--linea);border-radius:var(--r-m);padding:8px 12px;font:700 italic 20px/1 var(--f-titulo);font-variant-numeric:tabular-nums}
+
+/* Videos y clientes */
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.vids figure{margin:0;display:grid;gap:10px}
+.vids video{width:100%;aspect-ratio:9/12;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
+.vids figcaption{font-size:15px;color:var(--tinta-suave)}
+.vids figcaption b{display:block;color:var(--tinta)}
+.clientes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.clientes img{width:100%;height:auto;border-radius:var(--r-l);display:block}
+
+/* Contacto */
+.cont{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:start}
+.cont dl{display:grid;grid-template-columns:auto 1fr;gap:14px 24px;margin:0;font-size:17px}
+.cont dt{font:700 13px/1.6 var(--f-texto);letter-spacing:.14em;text-transform:uppercase;color:var(--celeste)}
+.cont dd{margin:0}
+.sel{user-select:all;font-weight:600}
+.copiar{font:600 14px/1 var(--f-texto);background:transparent;color:var(--banda-suave);border:1.5px solid var(--banda-linea);border-radius:999px;padding:7px 12px;margin-left:8px;cursor:pointer}
+.horas{display:grid;gap:4px;font-variant-numeric:tabular-nums}
+#ahora{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--f-texto);padding:9px 14px;border-radius:999px;border:1px solid var(--banda-linea);margin-top:16px}
+#ahora i{width:9px;height:9px;border-radius:50%;background:#7b8ea3;display:block}
+#ahora.on i{background:#2fd17a}
+footer{padding-block:28px;border-top:1px solid var(--banda-linea);font-size:14px;color:var(--banda-suave)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Nuevas secciones de video */
+.inst{display:grid;grid-template-columns:1.5fr .9fr;gap:clamp(20px,3vw,40px);align-items:stretch}
+.inst video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-l);background:#000;display:block;box-shadow:0 20px 50px rgba(0,30,60,.35)}
+.inst .masc{margin:0;position:relative;border-radius:var(--r-l);overflow:hidden;background:#0a4a8a}
+.inst .masc img{width:100%;height:100%;object-fit:cover;display:block}
+.reels{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.reels figure{margin:0;scroll-snap-align:start;display:grid;gap:10px;align-content:start}
+.reels video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
+.reels figcaption{font-size:14px;color:var(--banda-suave)}
+.reels figcaption b{display:block;color:#fff;font:800 italic 18px/1.1 var(--f-titulo);text-transform:uppercase;margin-bottom:4px}
+.reels-hint{font-size:13px;color:var(--banda-suave);margin-top:6px}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.duo figure{margin:0;display:grid;gap:10px}
+.duo video{width:100%;aspect-ratio:9/16;max-height:72vh;object-fit:cover;border-radius:var(--r-l);background:#000;display:block}
+.duo figcaption{font-size:14px;color:var(--tinta-suave)}
+.duo figcaption b{display:block;color:var(--tinta);font-weight:700}
+.local{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.pers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:760px}
+.pers figure{margin:0;display:grid;gap:10px;background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-l);padding:12px;align-content:start}
+.pers video,.pers img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
+.pers figcaption{font-size:14px;color:var(--tinta-suave);padding:0 4px 4px}
+.pers figcaption b{display:block;color:var(--tinta);font:800 italic 18px/1.1 var(--f-titulo);text-transform:uppercase;margin-bottom:4px}
+.ft .ft-vid{width:calc(100% + 44px);margin:-22px -22px 4px;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-m) var(--r-m) 0 0;background:#000;display:block}
+.acc-extra{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.acc-extra figure{margin:0;display:grid;gap:10px;background:var(--superficie);border:1px solid var(--linea);border-radius:var(--r-l);padding:12px;align-content:start}
+.acc-extra video,.acc-extra img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
+.acc-extra figcaption{font-size:14px;color:var(--tinta-suave)}
+.acc-extra figcaption b{display:block;color:var(--tinta);font-weight:700}
+.acc-extra a{font-weight:700;color:var(--accion);text-decoration:none;border-bottom:2px solid currentColor;justify-self:start}
+@media (max-width:900px){.inst,.local{grid-template-columns:1fr}.inst .masc{max-width:420px}.pers,.acc-extra{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pers,.acc-extra{grid-template-columns:1fr}.duo{grid-template-columns:1fr 1fr;gap:10px}}
+/* Cartel luminoso que corre */
+.cartel{background:#001a36;border-block:3px solid var(--celeste);overflow:hidden;position:relative;padding:14px 0;box-shadow:inset 0 0 40px rgba(39,170,226,.25)}
+.cartel .cinta{display:flex;width:max-content;animation:correr 38s linear infinite}
+.cartel:hover .cinta{animation-play-state:paused}
+.cartel span{font:800 italic clamp(18px,2.4vw,28px)/1 var(--f-titulo);text-transform:uppercase;letter-spacing:.06em;color:#fff;white-space:nowrap;padding-right:2.2em;text-shadow:0 0 8px rgba(39,170,226,.9),0 0 18px rgba(39,170,226,.55)}
+.cartel span b{color:#ffd23f;text-shadow:0 0 8px rgba(255,210,63,.8)}
+.cartel span i{font-style:normal;color:var(--celeste);padding:0 .6em}
+.cartel.inv{background:var(--celeste);border-color:#001a36;box-shadow:none}
+.cartel.inv .cinta{animation-direction:reverse;animation-duration:44s}
+.cartel.inv span{color:#002E5B;text-shadow:none}.cartel.inv span i{color:#fff}.cartel.inv span b{color:#fff;text-shadow:none}
+@keyframes correr{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cartel .cinta{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
+/* Animación al hacer scroll (visible por defecto) */
+.rv{transition:opacity .6s ease,transform .6s ease}
+.js .rv.fuera{opacity:.35;transform:translateY(18px)}
+
+@media (max-width:900px){
+  .hero-grid,.dest,.calc,.cont,.clientes,.acc{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .pasos{grid-template-columns:1fr}
+  .pasos video{aspect-ratio:4/3}
+  .sello{left:8px}
+}
+@media (max-width:560px){
+  .ft-grid,.vids{grid-template-columns:1fr}
+  .top nav{display:none}
+}
+@media (prefers-reduced-motion:reduce){.lluvia{animation:none}.rv{transition:none}.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+
+<div class="cartel" aria-label="Impermeabilizantes Comex en Colonia · TOP Total Lluvia Torrencial: 30 días de agua estancada sin filtraciones · Calculá cuántos baldes lleva tu techo · Consultá descuentos pagando contado en el mostrador · Asesoramiento sin compromiso · Envíos a todo el país · Celedonio Rojas 1789 esq. Atanasio Sierra"><div class="cinta" aria-hidden="true"><span>Impermeabilizantes <b>Comex</b> en Colonia<i>★</i></span><span>TOP Total Lluvia Torrencial: <b>30 días</b> de agua estancada sin filtraciones<i>★</i></span><span>Calculá cuántos baldes lleva tu techo<i>★</i></span><span>Consultá descuentos pagando <b>contado</b> en el mostrador<i>★</i></span><span>Asesoramiento <b>sin compromiso</b><i>★</i></span><span>Envíos a todo el país<i>★</i></span><span>Celedonio Rojas 1789 esq. Atanasio Sierra<i>★</i></span><span>Impermeabilizantes <b>Comex</b> en Colonia<i>★</i></span><span>TOP Total Lluvia Torrencial: <b>30 días</b> de agua estancada sin filtraciones<i>★</i></span><span>Calculá cuántos baldes lleva tu techo<i>★</i></span><span>Consultá descuentos pagando <b>contado</b> en el mostrador<i>★</i></span><span>Asesoramiento <b>sin compromiso</b><i>★</i></span><span>Envíos a todo el país<i>★</i></span><span>Celedonio Rojas 1789 esq. Atanasio Sierra<i>★</i></span></div></div>
+<header class="band hero">
+  <div class="lluvia" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="top">
+      <div class="marca"><img src="media/logo-neg.svg" alt="La Casa del Impermeabilizante" width="1426" height="329"><span class="ciudad">Colonia</span></div>
+      <nav aria-label="Secciones">
+        <a href="#calculo">Calculá tu techo</a>
+        <a href="#productos">Productos</a>
+        <a href="#aplicacion">Cómo se aplica</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://www.instagram.com/lacasadelimpermeabilizante.col/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Impermeabilizantes Comex en Colonia</p>
+        <h1 style="margin-top:14px">Que la lluvia se quede <em>afuera</em>.</h1>
+        <span class="techo" aria-hidden="true"></span>
+        <p class="lead">Toda la línea Comex TOP para techos, azoteas y paredes. Te ayudamos a calcular cuántos baldes lleva tu techo y cómo aplicarlo para que dure.</p>
+        <div class="ctas">
+          <a class="btn btn-wa" href="https://wa.me/59891333337?text=Hola%20La%20Casa%20del%20Impermeabilizante%20Colonia%2C%20quer%C3%ADa%20consultar%20por%20mi%20techo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>Escribinos por WhatsApp</a>
+          <a class="btn btn-cel" href="#calculo">Calculá tu techo</a>
+        </div>
+        <div class="datos">
+          <span><b>Celedonio Rojas 1789</b> esq. Atanasio Sierra</span>
+          <span>Lunes a viernes <b>8:15–12:15 y 14:00–18:00</b></span>
+          <span>Sábados <b>8:30–12:30</b></span>
+        </div>
+      </div>
+      <figure class="hero-vid">
+        <video autoplay muted loop playsinline preload="metadata" poster="media/tormenta.jpg" src="media/tormenta.mp4" aria-label="Video: tu techo en plena tormenta"></video>
+        <div class="sello" aria-hidden="true">Hasta<b>15 años</b></div>
+      </figure>
+    </div>
+  </div>
+</header>
+
+
+<main>
+<section id="destacado">
+  <div class="wrap dest">
+    <div class="dest-par rv">
+      <figure class="dest-vid dest-pers"><video controls playsinline preload="metadata" poster="media/total-personaje.jpg" src="media/total-personaje.mp4" aria-label="Video: personaje TOP Total Lluvia Torrencial"></video><figcaption>Dale play: el TOP Total tiene algo para decirte 🔊</figcaption></figure>
+      <figure class="dest-vid"><video controls autoplay muted loop playsinline preload="metadata" poster="media/aplicacion.jpg" src="media/aplicacion.mp4" aria-label="Video: Comex TOP Total Lluvia Torrencial 15 años"></video><figcaption>TOP Total Lluvia Torrencial 15 años, aplicado en obra.</figcaption></figure>
+    </div>
+    <div class="rv">
+      <p class="eyebrow">El más elegido</p>
+      <h2 style="margin-top:12px">TOP Total Lluvia Torrencial 15 años</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Aguanta hasta 30 días de agua estancada</b> sin filtrar.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Resinas de poliuretano-acrílico con microfibras: estira y acompaña los movimientos del techo.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Dos manos, con 2 horas de secado entre una y otra. Soporta tránsito peatonal.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Dura aproximadamente 15 años, con una mano de mantenimiento.</span></li>
+      </ul>
+      <div class="precio">
+        <span class="final" style="font-size:clamp(28px,3.6vw,38px)">Consultá descuentos pagando contado en el mostrador</span>
+        <small>Balde de 19 L. También hasta 6 pagos con OCA o Visa en el local.</small>
+        <a class="btn btn-wa" style="justify-self:start;margin-top:10px" href="https://wa.me/59891333337?text=Hola%20La%20Casa%20del%20Impermeabilizante%20Colonia%2C%20quer%C3%ADa%20consultar%20por%20el%20TOP%20Total%20Lluvia%20Torrencial%2015%20a%C3%B1os" target="_blank" rel="noopener">Consultar precio por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="conocenos" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Conocé La Casa</p>
+      <h2>Bienvenidos a La Casa del Impermeabilizante</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <p class="lead">Un local entero dedicado a proteger tu techo: toda la línea Comex TOP, accesorios y alguien que te explica cómo hacerlo bien.</p>
+    </div>
+    <div class="inst rv">
+      <video controls playsinline preload="none" poster="media/institucional.jpg" src="media/institucional.mp4" aria-label="Video institucional de La Casa del Impermeabilizante"></video>
+      <figure class="masc"><img src="media/mascota.jpg" alt="Personaje de balde Comex TOP Reciclado de Llanta dando la bienvenida a La Casa del Impermeabilizante" width="800" height="1246" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="calculo">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Calculá tu techo</p>
+      <h2>¿Cuántos baldes lleva?</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <p class="lead">Poné las medidas y elegí el producto. El cálculo usa el consumo de la ficha técnica de Comex e incluye el sellador y las dos manos.</p>
+    </div>
+    <div class="calc">
+      <form id="fcalc" class="rv" novalidate>
+        <div class="medidas">
+          <label for="largo">Largo (m)<input id="largo" type="number" inputmode="decimal" min="0" step="0.1" value="8"></label>
+          <span aria-hidden="true">×</span>
+          <label for="ancho">Ancho (m)<input id="ancho" type="number" inputmode="decimal" min="0" step="0.1" value="6"></label>
+        </div>
+        <label for="m2">o metros cuadrados totales<input id="m2" type="number" inputmode="decimal" min="0" step="1" placeholder="Ej.: 48"></label>
+        <label for="prod">Producto<select id="prod"></select></label>
+        <fieldset class="tipo" style="border:0;padding:0;margin:0">
+          <legend style="font-weight:600;font-size:15px;margin-bottom:8px">Estado del techo</legend>
+          <label for="t1"><input type="radio" name="tipo" id="t1" value="nuevo" checked>Sin impermeabilizar</label>
+          <label for="t2"><input type="radio" name="tipo" id="t2" value="mant">Mantenimiento</label>
+        </fieldset>
+      </form>
+      <div class="res rv" aria-live="polite">
+        <div class="num" id="rb">3<small>baldes de 19 L</small></div>
+        <p id="rt">Para 48 m² con TOP Total Lluvia Torrencial 15 años.</p>
+        <dl class="detalle">
+          <dt>Superficie</dt><dd id="r1">48 m²</dd>
+          <dt>Consumo</dt><dd id="r2">1,2 a 1,5 L por m²</dd>
+          <dt>Litros</dt><dd id="r3">58 a 72 L</dd>
+        </dl>
+        <a class="btn btn-wa" id="rwa" href="https://wa.me/59891333337" target="_blank" rel="noopener" style="justify-self:start"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>Consultar con este cálculo</a>
+        <p class="nota-b">Es aproximado: depende de la rugosidad y del estado del techo. Si tiene fisuras, se tapan antes con TOP Tapagoteras. Te lo confirmamos en el local. Consultá descuentos contado en mostrador.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aplicacion">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Cómo se aplica</p>
+      <h2>Tres pasos, un techo seco</h2>
+      <span class="techo" aria-hidden="true"></span>
+    </div>
+    <ol class="pasos">
+      <li class="rv">
+        <video controls playsinline preload="none" poster="media/tapagoteras.jpg" src="media/tapagoteras.mp4" aria-label="Video: reparación de fisuras con TOP Tapagoteras"></video>
+        <h3>Reparar</h3>
+        <p>Limpiá el techo: sin polvo, grasa ni partes flojas. Tapá fisuras y agujeros con TOP Tapagoteras Reforzado, en capas de hasta 1 cm.</p>
+      </li>
+      <li class="rv">
+        <video controls playsinline preload="none" poster="media/aplicacion.jpg" src="media/aplicacion.mp4" aria-label="Video: aplicación de Comex TOP con cepillo"></video>
+        <h3>Sellar</h3>
+        <p>Primera mano de sellador: el mismo impermeabilizante diluido, 1 parte de producto y 4 de agua. Deja el techo listo para que el producto se adhiera.</p>
+      </li>
+      <li class="rv">
+        <video controls playsinline preload="none" poster="media/reciclado.jpg" src="media/reciclado.mp4" aria-label="Video: TOP Reciclado de Llanta"></video>
+        <h3>Dos manos</h3>
+        <p>Dos manos sin diluir, la segunda cruzada a la primera. Entre mano y mano, de 2 a 3 horas según el producto.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="cartel inv" aria-label="Techos · Azoteas · Paredes · Canchas deportivas · Pisos de garaje · Demarcación vial · Hasta 15 años de protección"><div class="cinta" aria-hidden="true"><span>Techos<i>★</i></span><span>Azoteas<i>★</i></span><span>Paredes<i>★</i></span><span>Canchas deportivas<i>★</i></span><span>Pisos de garaje<i>★</i></span><span>Demarcación vial<i>★</i></span><span>Hasta <b>15 años</b> de protección<i>★</i></span><span>Techos<i>★</i></span><span>Azoteas<i>★</i></span><span>Paredes<i>★</i></span><span>Canchas deportivas<i>★</i></span><span>Pisos de garaje<i>★</i></span><span>Demarcación vial<i>★</i></span><span>Hasta <b>15 años</b> de protección<i>★</i></span></div></div>
+<section class="band" id="reales">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Aplicaciones reales</p>
+      <h2>Mirá cómo trabaja Comex</h2>
+      <span class="techo" aria-hidden="true"></span>
+    </div>
+    <div class="reels"><figure><video muted loop playsinline preload="none" poster="media/rodillo.jpg" src="media/rodillo.mp4" aria-label="Dos manos con rodillo"></video><figcaption><b>Dos manos con rodillo</b>Sin diluir, bien cargado, la segunda cruzada.</figcaption></figure><figure><video muted loop playsinline preload="none" poster="media/textura.jpg" src="media/textura.mp4" aria-label="Así queda la membrana"></video><figcaption><b>Así queda la membrana</b>Una capa elástica y continua que no deja pasar el agua.</figcaption></figure><figure><video muted loop playsinline preload="none" poster="media/plus-nf.jpg" src="media/plus-nf.mp4" aria-label="Blanco fotosensible"></video><figcaption><b>Blanco fotosensible</b>Se ve celeste al aplicar y queda blanco al secar: así sabés dónde ya pasaste.</figcaption></figure><figure><video muted loop playsinline preload="none" poster="media/reciclado-textura.jpg" src="media/reciclado-textura.mp4" aria-label="TOP Reciclado de Llanta"></video><figcaption><b>TOP Reciclado de Llanta</b>Con caucho de neumáticos reciclados: antideslizante.</figcaption></figure><figure><video muted loop playsinline preload="none" poster="media/tapagoteras-espatula.jpg" src="media/tapagoteras-espatula.mp4" aria-label="TOP Tapagoteras Reforzado"></video><figcaption><b>TOP Tapagoteras Reforzado</b>Con espátula, para tapar fisuras y juntas antes de impermeabilizar.</figcaption></figure><figure><video muted loop playsinline preload="none" poster="media/pared.jpg" src="media/pared.mp4" aria-label="También en paredes"></video><figcaption><b>También en paredes</b>Muros y medianeras que se mojan con la lluvia.</figcaption></figure><figure><video muted loop playsinline preload="none" poster="media/deportivo-rojo.jpg" src="media/deportivo-rojo.mp4" aria-label="TOP Deportivo"></video><figcaption><b>TOP Deportivo</b>Canchas con terminación antideslizante, de cerca.</figcaption></figure></div>
+    <p class="reels-hint">Deslizá para ver más →</p>
+  </div>
+</section>
+
+<section id="productos" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Línea Comex</p>
+      <h2>Productos y fichas técnicas</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <p class="lead">Datos de las fichas oficiales del fabricante. Ordenados de mayor a menor duración.</p>
+    </div>
+    <div class="ft-bar" id="ftc" role="group" aria-label="Filtrar productos"></div>
+    <div class="ft-grid" id="ftg"></div>
+  </div>
+</section>
+
+<section id="accesorios" style="padding-top:0">
+  <div class="wrap">
+    <div class="acc rv">
+      <img src="media/brocha.jpg" alt="Brocha Comex Línea Plus semi profesional de 1 pulgada" width="520" height="693" loading="lazy">
+      <div>
+        <p class="eyebrow">Accesorios</p>
+        <h2 style="margin-top:12px">Brochas Comex Línea Plus</h2>
+        <span class="techo" aria-hidden="true"></span>
+        <p class="lead" style="margin-top:16px">Brochas semi profesionales: buena carga y descarga de pintura, cerdas firmes con corte recto. Para cortes, bordes, babetas y sellador.</p>
+        <div class="medidas-b" aria-label="Medidas disponibles"><span>½″</span><span>1″</span><span>1½″</span><span>2″</span><span>2½″</span><span>3″</span><span>4″</span></div>
+        <div class="ctas"><a class="btn btn-sec" href="https://wa.me/59891333337?text=Hola%2C%20quer%C3%ADa%20consultar%20por%20las%20brochas%20Comex%20L%C3%ADnea%20Plus" target="_blank" rel="noopener">Consultar precio</a></div>
+      </div>
+    </div>
+    <div class="acc-extra">
+      <figure><video controls playsinline preload="none" poster="media/guante.jpg" src="media/guante.mp4" aria-label="Guante removedor para preparar la superficie"></video><figcaption><b>Guante removedor</b>Prepará la superficie y lográ mejor adherencia.</figcaption><a href="https://wa.me/59891333337?text=Hola%2C%20quer%C3%ADa%20consultar%20por%20el%20guante%20removedor" target="_blank" rel="noopener">Consultar precio</a></figure>
+      <figure><video controls playsinline preload="none" poster="media/herramienta-8en1.jpg" src="media/herramienta-8en1.mp4" aria-label="Espátula herramienta 8 en 1"></video><figcaption><b>Herramienta 8 en 1</b>Una espátula que esconde más herramientas.</figcaption><a href="https://wa.me/59891333337?text=Hola%2C%20quer%C3%ADa%20consultar%20por%20la%20herramienta%208%20en%201" target="_blank" rel="noopener">Consultar precio</a></figure>
+      <figure><img src="media/lentes.jpg" alt="Lentes de seguridad de policarbonato" width="700" height="875" loading="lazy"><figcaption><b>Lentes de policarbonato</b>Tu protección es lo primero.</figcaption><a href="https://wa.me/59891333337?text=Hola%2C%20quer%C3%ADa%20consultar%20por%20los%20lentes%20de%20policarbonato" target="_blank" rel="noopener">Consultar precio</a></figure>
+    </div>
+  </div>
+</section>
+
+<section id="clientes" style="padding-top:0">
+  <div class="wrap clientes">
+    <img class="rv" src="media/clientes.jpg" alt="Dos clientes junto a sus baldes de Comex TOP Reciclado de Llanta, listos para impermeabilizar" width="1000" height="1333" loading="lazy">
+    <div class="rv">
+      <p class="eyebrow">Clientes</p>
+      <h2 style="margin-top:12px">Techos que ya no gotean</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <p class="lead" style="margin-top:16px">Clientes llevando su TOP Reciclado de Llanta para impermeabilizar la azotea. ¿Ya protegiste tu techo con Comex? Mandanos una foto por WhatsApp y la sumamos acá.</p>
+      <div class="vids" style="margin-top:28px">
+        <figure>
+          <video controls playsinline preload="none" poster="media/reciclado.jpg" src="media/reciclado.mp4"></video>
+          <figcaption><b>TOP Reciclado de Llanta</b>Hecho con caucho de neumáticos reciclados.</figcaption>
+        </figure>
+        <figure>
+          <img src="media/top-total-30dias.jpg" alt="Flyer: Comex TOP Total Lluvia Torrencial 15 años, 30 días de encharcamiento sin filtraciones" width="800" height="988" loading="lazy" style="width:100%;height:auto;border-radius:10px;display:block">
+          <figcaption><b>TOP Total 15 años</b>30 días de encharcamiento sin filtraciones.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="local" style="padding-top:0">
+  <div class="wrap local">
+    <div class="rv">
+      <p class="eyebrow">En el local</p>
+      <h2 style="margin-top:12px">Te lo explicamos en persona</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <p class="lead" style="margin-top:16px">Hacemos demostraciones en el local: te mostramos cada producto, cómo se aplica y cuál conviene para tu techo. Vení con las medidas y salís sabiendo qué hacer.</p>
+    </div>
+    <div class="duo rv">
+      <figure><video controls playsinline preload="none" poster="media/demo1.jpg" src="media/demo1.mp4" aria-label="Demostración en La Casa del Impermeabilizante"></video><figcaption><b>Demostración en el local</b>Con clientes, mostrando cómo trabaja cada producto.</figcaption></figure>
+      <figure><video controls playsinline preload="none" poster="media/demo2.jpg" src="media/demo2.mp4" aria-label="Explicación a clientes en el local"></video><figcaption><b>Asesoramiento sin compromiso</b>Preguntá todo antes de comprar.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="band" id="contacto">
+  <div class="wrap cont">
+    <div class="rv">
+      <p class="eyebrow">Contacto</p>
+      <h2 style="margin-top:12px">Vení, traé las medidas y te asesoramos</h2>
+      <span class="techo" aria-hidden="true"></span>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://wa.me/59891333337?text=Hola%20La%20Casa%20del%20Impermeabilizante%20Colonia%2C%20quer%C3%ADa%20consultar%20por%20mi%20techo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5zm0 17.2a7.8 7.8 0 0 1-4-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A7.8 7.8 0 1 1 12 19.7zm4.3-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.4 6.4 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>Escribinos por WhatsApp</a>
+        <a class="btn btn-sec" href="https://www.instagram.com/lacasadelimpermeabilizante.col/" target="_blank" rel="noopener">Seguinos en Instagram</a>
+        <a class="btn btn-sec" href="https://maps.google.com/?q=Celedonio+Rojas+1789,+Colonia+del+Sacramento,+Uruguay" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="rv">
+      <dl>
+        <dt>Dirección</dt><dd>Celedonio Rojas 1789, esquina Atanasio Sierra<br>Colonia del Sacramento · CP 70000</dd>
+        <dt>WhatsApp</dt><dd><span class="sel" id="num">091 333 337</span><button class="copiar" type="button" id="copiar">Copiar</button></dd>
+        <dt>Teléfono</dt><dd><span class="sel">4522 7965</span></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/lacasadelimpermeabilizante.col/" target="_blank" rel="noopener" style="font-weight:600">@lacasadelimpermeabilizante.col</a></dd>
+        <dt>Horario</dt><dd class="horas"><span>Lunes a viernes 8:15 a 12:15 y 14:00 a 18:00</span><span>Sábados 8:30 a 12:30</span><span>Domingos y feriados cerrado</span></dd>
+      </dl>
+      <p id="ahora" hidden><i></i><span></span></p>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap"><span>© 2026 La Casa del Impermeabilizante Colonia · Productos Comex</span><span>Consultá descuentos contado en mostrador.</span></div>
+  </footer>
+</section>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+// Animación al hacer scroll: solo se ocultan los elementos que están fuera de pantalla al cargar
+try{
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+    var els=[].slice.call(document.querySelectorAll('.rv'));
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('fuera');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add('fuera');io.observe(el)}});
+  }
+}catch(e){}
+
+// Abierto ahora
+try{
+  var d=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Montevideo'}));
+  var w=d.getDay(),m=d.getHours()*60+d.getMinutes(),on=false;
+  if(w>=1&&w<=5)on=(m>=495&&m<735)||(m>=840&&m<1080);
+  if(w==6)on=(m>=510&&m<750);
+  var a=document.getElementById('ahora');a.hidden=false;if(on)a.classList.add('on');
+  a.querySelector('span').textContent=on?'Abierto ahora':'Cerrado ahora';
+}catch(e){}
+
+// Copiar número
+document.getElementById('copiar').addEventListener('click',function(){
+  var b=this,t='091333337';
+  var ok=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1800)};
+  try{navigator.clipboard.writeText(t).then(ok,function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+});
+
+// Calculadora (consumo del sistema completo según ficha técnica Comex, L/m²)
+var P=[
+ {n:'TOP Total Lluvia Torrencial 15 años',nu:[1.2,1.5],ma:[1.2,1.2]},
+ {n:'TOP Total 10 años',nu:[1.2,1.5],ma:[1.2,1.2]},
+ {n:'TOP 10 años Aislante Térmico',nu:[1.0,1.5],ma:[1.2,1.2]},
+ {n:'TOP Reciclado de Llanta 5 años',nu:[1.0,1.5],ma:[1.0,1.0]},
+ {n:'TOP 5 años Secado Rápido Plus NF',nu:[1.0,1.5],ma:[1.0,1.0]},
+ {n:'TOP 3 años Secado Rápido',nu:[1.0,1.5],ma:[1.0,1.0]}
+];
+var sp=document.getElementById('prod');
+P.forEach(function(p,i){var o=document.createElement('option');o.value=i;o.textContent=p.n;sp.appendChild(o)});
+var fmt=function(x){return x.toLocaleString('es-UY',{maximumFractionDigits:1})};
+function calc(){
+  var m2=parseFloat(document.getElementById('m2').value);
+  if(!(m2>0)){var l=parseFloat(document.getElementById('largo').value)||0,an=parseFloat(document.getElementById('ancho').value)||0;m2=l*an}
+  var p=P[sp.value],mant=document.querySelector('input[name=tipo]:checked').value==='mant';
+  var c=mant?p.ma:p.nu, lmin=m2*c[0], lmax=m2*c[1];
+  var b=Math.max(1,Math.ceil(lmax/19)); if(!(m2>0))b=0;
+  document.getElementById('rb').innerHTML=b+'<small>'+(b===1?'balde':'baldes')+' de 19 L</small>';
+  document.getElementById('rt').textContent=m2>0?('Para '+fmt(m2)+' m² con '+p.n+(mant?' (mantenimiento).':'.')):'Poné las medidas del techo.';
+  document.getElementById('r1').textContent=fmt(m2)+' m²';
+  document.getElementById('r2').textContent=(c[0]===c[1]?fmt(c[0]):fmt(c[0])+' a '+fmt(c[1]))+' L por m²';
+  document.getElementById('r3').textContent=(lmin===lmax?Math.ceil(lmin):Math.ceil(lmin)+' a '+Math.ceil(lmax))+' L';
+  document.getElementById('rwa').href='https://wa.me/59891333337?text='+encodeURIComponent('Hola La Casa del Impermeabilizante Colonia, tengo un techo de '+fmt(m2)+' m² ('+(mant?'mantenimiento':'sin impermeabilizar')+') y me interesa '+p.n+'. La calculadora me dio '+b+' baldes de 19 L. ¿Me confirman?');
+}
+document.getElementById('fcalc').addEventListener('input',calc);
+document.getElementById('fcalc').addEventListener('submit',function(e){e.preventDefault()});
+calc();
+
+// Productos y fichas
+var F=[{"n": "TOP Total Lluvia Torrencial 15 años", "c": "Techos", "id": "1QNcM5hfQRAl3F5fClqMNEgQ7mxmAE2L3", "q": "Impermeabilizante elastomérico base agua con resinas híbridas de poliuretano-acrílico de nueva generación, de secado rápido, que resiste el encharcamiento. Membrana líquida monocomponente…", "r": "Superficies porosas sin impermeabilizar: 1,2 a 1,5 L/m² con sellador y dos manos. Mantenimiento: 1,2 L/m². Superficies muy…", "h": "Sellador diluido + 2 manos sin diluir (al menos 1,2 L cada 2 m² por mano), la segunda cruzada. Superficies…", "s": "Al tacto 20 min (25 °C, 50% HR; varía según el color); entre manos 2 horas; sistema completo en unas 4 horas;…", "d": "Dura aprox. 15 años con mantenimiento", "e": "Bote 4 L (4,60 kg), cubeta 19 L (21,85 kg), tambor 200 L (230 kg)", "di": "Solo como sellador: 1 parte de agua y 1 de producto (en volumen). Tercera mano en superficies rugosas: diluida al 25%…"}, {"n": "TOP Total 10 años", "c": "Techos", "id": "193xxtgT4gHZN2k5u2XbvmwVj2ch_X__k", "q": "Impermeabilizante elastomérico base agua con resinas híbridas de poliuretano-acrílico, de secado rápido, con alto contenido de microfibras y resistente al encharcamiento. Forma una membrana…", "r": "Superficies porosas sin impermeabilizar: 1,2 a 1,5 L/m² con sellador y dos manos. Mantenimiento: 1,2 L/m². Superficies muy…", "h": "Sellador diluido + 2 manos sin diluir (al menos 1,2 L cada 2 m² por mano), la segunda cruzada. Superficies…", "s": "Al tacto 20 min (25 °C, 50% HR; varía según el color); entre manos 2 horas (con malla, preferentemente 24 h);…", "d": "Dura aprox. 10 años con mantenimiento", "e": "Bote 4 L (4,60 kg), cubeta 19 L (21,85 kg), tambor 200 L (230 kg)", "di": "Solo como sellador: 4 partes de agua y 1 de producto (en volumen). Tercera mano en superficies rugosas: diluida al 25%…"}, {"n": "TOP 10 años Aislante Térmico", "c": "Techos", "id": "1FcTj_YUTIbR66GEGF-PnBCRZ_8tEna16", "q": "Impermeabilizante elastomérico acrílico base agua, aislante térmico y para superficies frías, de secado rápido. Forma una carpeta autoadherible e impermeable que puede bajar hasta 15 °C la…", "r": "Superficies porosas sin impermeabilizar: 1,0 a 1,5 L/m² con primario y dos manos. Mantenimiento de impermeabilizaciones: 1,2…", "h": "Primario diluido + 2 manos sin diluir (1,2 L cada 2 m² por mano), la segunda en sentido cruzado. Como…", "s": "A 25 °C y 50% HR: al tacto 30 min; entre manos 3 horas; curado total 7 días. Aplicación total del sistema en…", "d": "Dura aprox. 10 años con mantenimiento", "e": "Bote 4 L (2,6 kg), cubeta 19 L (12,35 kg), tambor 200 L (130 kg)", "di": "Solo en el primario: 4 partes de agua y 1 de producto (en volumen). Las manos de acabado van sin diluir."}, {"n": "Roof Mastic Aislante Térmico 7 años", "c": "Techos", "id": "1E4Ltkclhe1aSANLM5wpZeYr3SsJfnxRn", "q": "Impermeabilizante elastomérico acrílico base agua, aislante térmico y para superficies frías. Forma una carpeta autoadherible e impermeable que mantiene temperaturas más bajas.", "r": "Superficies porosas sin impermeabilizar: 1,2 a 1,7 L/m² con primario y dos manos. Mantenimiento: 1,2 L/m². Como superficie fría:…", "h": "Primario (Roof Mastic Sello) + 2 manos sin diluir (1,2 L cada 2 m² por mano), la segunda cruzada. Como…", "s": "A 25 °C y 50% HR: al tacto 30 min; entre manos 24 horas; curado total 7 días.", "d": "Dura aprox. 7 años con mantenimiento", "e": "Bote 4 L (2,6 kg), cubeta 19 L (12,35 kg), tambor 200 L (130 kg)", "di": "No se recomienda; viene listo para usar. (El primario Roof Mastic Sello va diluido 1 de agua : 1 de producto.)"}, {"n": "TOP Reciclado de Llanta 5 años Secado Rápido", "c": "Techos", "id": "1gdZgffNja3J5ZBBcnUEIpCJeSsL-q3wm", "q": "Impermeabilizante elastomérico acrílico base agua reforzado con caucho de neumático reciclado, de secado rápido. El caucho le da resistencia al desgaste y efecto antideslizante para poder…", "r": "Superficies porosas sin impermeabilizar: 1,0 a 1,5 L/m² con sellador y dos manos. Mantenimiento: 1,0 L/m². Sellador diluido: 4 a…", "h": "Sellador diluido + 2 manos sin diluir (1 L cada 2 m² por mano), la segunda cruzada. En superficies muy…", "s": "Al tacto 30 min (25 °C, 50% HR); sellador 1 hora; entre manos 3 horas; sistema completo en unas 4 horas;…", "d": "Dura aprox. 5 años con mantenimiento", "e": "Bote 4 L (4,68 kg), cubeta 19 L (22,23 kg), tambor 200 L (234 kg)", "di": "Solo como sellador: 4 partes de agua y 1 de producto (en volumen). Tercera mano opcional en superficies irregulares:…"}, {"n": "TOP 5 años Secado Rápido Plus NF", "c": "Techos", "id": "1vtLWOfnOgenUETMjJFNgRkklNMQNfBXz", "q": "Impermeabilizante elastomérico acrílico base agua de secado rápido, con alto contenido de microfibras y alta resistencia al encharcamiento. La versión blanca es fotosensible: es azul en el…", "r": "Superficies porosas sin impermeabilizar: 1,0 a 1,5 L/m² con primario y dos manos. Mantenimiento: 1,0 L/m² a 2 manos. Como…", "h": "Primario diluido + 2 manos sin diluir (1 L cada 2 m² por mano), la segunda cruzada. Como superficie fría: 3ª…", "s": "A 25 °C y 50% HR: al tacto 20 min; primario al menos 1 hora; entre manos 2 horas; sistema total en unas 4…", "d": "Dura aprox. 5 años con mantenimiento", "e": "Bote 4 L (4,96 kg), cubeta 19 L (23,56 kg), tambor 200 L (248 kg)", "di": "Solo en el primario: 4 partes de agua y 1 de producto (en volumen)."}, {"n": "TOP 3 años Secado Rápido Fibratado", "c": "Techos", "id": "1QHyLeVYVPf6YY72lB85l8rl82mRUT0Xq", "q": "Impermeabilizante elastomérico acrílico base agua de secado rápido con alto contenido de microfibras, que forma una membrana resistente a los movimientos y al encharcamiento. La versión…", "r": "Superficies porosas sin impermeabilizar: 1,0 a 1,5 L/m² con primario y dos manos. Mantenimiento: 1,0 L/m² a 2 manos. Como…", "h": "Primario diluido + 2 manos sin diluir (1 L cada 2 m² por mano), la segunda cruzada. Como superficie fría…", "s": "A 25 °C y 50% HR: al tacto 20 min; primario al menos 1 hora; entre manos 3 horas; aplicación total en unas 6…", "d": "Dura aprox. 3 años con mantenimiento", "e": "Bote 4 L, cubeta 19 L, tambor 200 L (blanco: 4,92 / 23,37 / 246 kg; terracota y…", "di": "Solo en el primario: 4 partes de agua y 1 de producto (en volumen)."}, {"n": "TOP 3 años Secado Rápido Plus", "c": "Techos", "id": "1tDcYQopszkRrSJ9ZIv2-3um-VVzGrAdv", "q": "Impermeabilizante elastomérico acrílico base agua de secado rápido con alto contenido de microfibras, que forma una membrana resistente a los movimientos y al encharcamiento. Todo el…", "r": "Superficies porosas sin impermeabilizar: 1,0 a 1,5 L/m² con primario y dos manos. Mantenimiento: 1,0 L/m² a 2 manos. Primario…", "h": "Primario diluido + 2 manos sin diluir (1 L cada 2 m² por mano), la segunda cruzada.", "s": "A 25 °C y 50% HR: al tacto 20 min; primario al menos 1 hora; entre manos 2 horas; sistema total en unas 4…", "d": "Dura aprox. 3 años con mantenimiento", "e": "Bote 4 L (4,88 kg), cubeta 19 L (23,18 kg), tambor 200 L (244 kg)", "di": "Solo en el primario: 4 partes de agua y 1 de producto (en volumen)."}, {"n": "TOP Tapagoteras Reforzado", "c": "Selladores y reparación", "id": "11gM7QVcVcMKYhoe5YZ0IhiQdoiTyEtlQ", "q": "Pasta acrílica (estireno-acrílica) con cargas minerales y fibra de PET, para juntas flexibles y para sellar superficies irregulares. La fibra le da excelente resistencia al agrietamiento;…", "r": "Aproximadamente 700 a 800 mm por litro, según la superficie (así figura en la ficha; ver dudas).", "h": "Una capa y, si hace falta, una segunda; si hay mucha diferencia entre placas, una tercera. Resanes profundos:…", "s": "Al tacto 30 min (25 °C, 50% HR); para recubrir encima: 3 horas.", "d": "", "e": "1 L (1,24 kg) y galón 4 L (4,96 kg)", "di": "No se recomienda; en casos excepcionales hasta 2% en peso."}, {"n": "TOP Repelente Base Agua", "c": "Selladores y reparación", "id": "1zUXe_aBUUi3rlgCP4qpL7vl-kWWfq1Fc", "q": "Hidrorrepelente base agua a base de resina de siloxano (líquido blanco lechoso) que le da a las superficies verticales gran repelencia al agua. Forma una barrera protectora transparente que…", "r": "Concreto: 6 a 8 m²/L. Revoque: 3 a 4 m²/L. Ladrillo visto: 2 m²/L. Varía según la absorción de la superficie.", "h": "En la mayoría de las superficies alcanza una sola aplicación hasta saturar; se recomienda prueba previa y, si…", "s": "A 25 °C y 50% HR: al tacto 30 min; secado total 24 horas.", "d": "", "e": "Bote 4 L (4 kg), cubeta 19 L (19 kg), tambor 200 L (200 kg)", "di": "No se diluye; se aplica tal cual."}, {"n": "Sellatop", "c": "Selladores y reparación", "id": "15Mmb733R4AAbOpFyAjdcndY_NCOugJbU", "q": "Mortero hidráulico a base de cemento, arena y aditivos, de fraguado instantáneo, para tapar fugas y filtraciones de agua. Endurece aun bajo el agua, frena el agua en segundos y resiste…", "r": "600 cm³ por kilogramo de material", "h": "", "s": "3 a 5 minutos", "d": "", "e": "Cubeta 5 kg", "di": "Máximo 0,28 L de agua por kg de polvo (28%), hasta consistencia pastosa."}, {"n": "Roof Mastic Sello", "c": "Selladores y reparación", "id": "106sqzre_OSjhI9abYDJszT_EKW4lsJRM", "q": "Primario acrílico-estirenado base agua, sellador y tapaporos de la superficie a impermeabilizar. Mejora la adherencia y el rendimiento del impermeabilizante Roof Mastic 3 y 5 años.", "r": "4 a 6 m²/L a una capa, según la porosidad de la superficie.", "h": "Una capa", "s": "A 25 °C y 50% HR: al tacto 30 min; secado total 4 horas (varía con temperatura, humedad y ventilación).", "d": "", "e": "Bote 4 L (4,60 kg), cubeta 19 L (21,85 kg)", "di": ""}, {"n": "Comex 100 Primario de Secado Extra Rápido", "c": "Selladores y reparación", "id": "1fY78eT21xrRtpLcCKddAorXpO5teJWk4", "q": "Primario anticorrosivo premium alquídico modificado, libre de plomo, mate y de secado extra rápido (30 min al tacto). Da muy buena adherencia entre la superficie y el acabado, y alarga la…", "r": "5 a 7 m²/L a una mano sobre superficie lisa, al espesor recomendado (puede variar 25% o más).", "h": "2 manos, con 30 minutos entre mano y mano.", "s": "A 25 °C y 50% HR: al tacto 30 minutos; duro 90 minutos; curado total 7 días.", "d": "", "e": "Bote 1 L, 4 L, cubeta 19 L, tambor 200 L", "di": "Se recomienda usar como viene. Si hace falta, con Thinner Estándar Comex: brocha y rodillo hasta 10%; pistola de baja…"}, {"n": "Epoxacryl E-6000", "c": "Pisos y demarcación", "id": "1hRDqiHF8ij0vpbhCbEjFJhtH0QEEWGwP", "q": "Recubrimiento para pisos de concreto de un solo componente, listo para usar, que combina resina epóxica con látex 100% acrílico: la durabilidad de un epoxi con la facilidad de aplicación de…", "r": "4,72 a 6,30 m²/L sobre concreto preparado y/o imprimado (varía con la porosidad; las mermas pueden ser del 50% o más).", "h": "2 capas", "s": "Al tacto 1 hora; para recubrir 4 horas; tránsito peatonal liviano 24 horas; peatonal pesado 72 horas;…", "d": "", "e": "Galón de 3,55 L", "di": "No requiere; no usar adelgazador. Listo para usar."}, {"n": "TOP Deportivo", "c": "Pisos y demarcación", "id": "1JpZQiUSnq0El5HUhRDc8ka1Vm4TB-8cR", "q": "Acabado acrílico base agua con cargas minerales, antideslizante, de gran adherencia y alta resistencia a la abrasión, los impactos, la alcalinidad y la eflorescencia, para canchas…", "r": "Colores de línea: 2 a 3 m² por litro por capa. Colores concentrados: 1,5 a 2 m² por litro por capa.", "h": "2 a 3 manos según el esfuerzo y el color. Con colores concentrados: 1 capa de Top Deportivo blanco y al menos…", "s": "A 25 °C y 50% HR: al tacto 2 horas; 24 horas entre capas; curar 6 a 8 días antes de transitar.", "d": "", "e": "Bote 4 L (6,4 kg), cubeta 19 L (30,4 kg), tambor 200 L (320 kg)", "di": "Solo si hace falta: 5 a 10% con agua limpia."}, {"n": "Pintura Tráfico Secado Rápido Base Agua", "c": "Pisos y demarcación", "id": "1I1_VxQ-ul-0dkJqVIiedL2HCBjjOtCPx", "q": "Pintura acrílica base agua de altos sólidos para señalización vial, de gran resistencia a la abrasión y a la intemperie. Libre de metales pesados.", "r": "2,3 a 2,9 m²/L con máquina pintarrayas al espesor recomendado; con línea de 10 cm de ancho, unos 26 metros por litro (sin contar…", "h": "", "s": "A 25 °C y 50% HR: 10 minutos; secado total 60 minutos. Verificar que esté seca antes de liberar el tránsito.", "d": "", "e": "Cubeta 19 L, tambor 200 L", "di": "No se recomienda diluir; agregar agua alarga el secado y baja el cubrimiento y la resistencia."}, {"n": "Vía Color Pintura Tráfico Base Solvente", "c": "Pisos y demarcación", "id": "1tWwAU9rJeYSAjqVCdP1A9qHdnNKnaMUb", "q": "Pintura de demarcación alquídica / caucho clorado base solvente, libre de metales pesados, de fácil aplicación y secado rápido, con buena resistencia al desgaste por tránsito vehicular y…", "r": "Aprox. 32,8 m de línea de 10 cm de ancho por litro (a 6 milésimas de pulgada de espesor seco); 2,6 m²/L con máquina pintarrayas a…", "h": "", "s": "A 25 °C y 50% HR (laboratorio): al tacto 10 minutos mínimo; al rodamiento 30 minutos máximo. Se recomienda…", "d": "", "e": "Bote 1 L, bote 4 L, cubeta 19 L, tambor 200 L", "di": "No se debe diluir (afecta sus características y desempeño)."}];
+var W=["Blanco","#ffffff"],TC=["Rojo terracota","#b5482e"],VE=["Verde","#3f7d4a"];
+var COL={"TOP 10 años Aislante Térmico":[W],"Roof Mastic Aislante Térmico 7 años":[W],
+"TOP Reciclado de Llanta 5 años Secado Rápido":[W,["Rojo","#a63a2b"]],
+"TOP 5 años Secado Rápido Plus NF":[["Blanco fotosensible","#ffffff"],TC,VE],
+"TOP 3 años Secado Rápido Fibratado":[W,TC],"TOP 3 años Secado Rápido Plus":[TC,VE],
+"Epoxacryl E-6000":[W,["Gris","#8a9096"],["Rojo","#9e2a2b"],["Café","#6b4a35"],["Verde","#3d6b45"]],
+"TOP Deportivo":[W,["Terracota","#b5522f"],["Verde tenis","#2f6e4f"],["Azul tenis","#2f5f9e"]],
+"Pintura Tráfico Secado Rápido Base Agua":[W,["Amarillo","#f2c200"]],
+"Vía Color Pintura Tráfico Base Solvente":[W,["Amarillo","#f2c200"],["Negro","#1d1d1d"],["Rojo","#c0282d"],["Azul","#1f4f9e"],["Verde","#2e7d46"]]};
+var XTRA={"Epoxacryl E-6000":"y 56 colores más para igualar","TOP Deportivo":"y más de 700 colores en máquina"};
+function colores(f){var c=COL[f.n];if(!c)return '';
+ return '<div class="sw"><span class="pr-t">Colores</span><ul>'+c.map(function(x){return '<li><i style="background:'+x[1]+'"></i>'+esc(x[0])+'</li>'}).join('')+(XTRA[f.n]?'<li class="sw-x">'+XTRA[f.n]+'</li>':'')+'</ul></div>';}
+var VID={"TOP Deportivo":"deportivo-rojo","Epoxacryl E-6000":"epoxacryl","TOP Tapagoteras Reforzado":"tapagoteras-espatula","TOP Reciclado de Llanta 5 años Secado Rápido":"reciclado-textura","TOP 10 años Aislante Térmico":"aislante-personaje"};
+function vid(f){var v=VID[f.n];return v?'<video class="ft-vid" controls muted loop playsinline preload="none" poster="media/'+v+'.jpg" src="media/'+v+'.mp4" aria-label="Video: '+esc(f.n)+'"></video>':''}
+var PR={"TOP Reciclado de Llanta 5 años Secado Rápido":[["Blanco o rojo 19 L","7.046"],["Blanco o rojo 4 L","1.665"]],
+"TOP Tapagoteras Reforzado":[["4 L","2.069"],["1 L","660"]],
+"TOP Total 10 años":[["Blanco 19 L","7.816"],["Blanco 4 L","1.778"]]};
+var ESP={"TOP Total Lluvia Torrencial 15 años":1,"TOP 3 años Secado Rápido Fibratado":1};
+function precio(f){
+ if(ESP[f.n])return '<div class="pr"><span class="pr-t">Precio</span><b class="pr-esp">Consultá precio promoción especial en el mostrador</b><a class="pr-wa" href="https://wa.me/59891333337?text='+encodeURIComponent('Hola, quería consultar el precio promoción especial del '+f.n)+'" target="_blank" rel="noopener">o escribinos por WhatsApp</a></div>';
+ var l=PR[f.n];if(!l)return '';
+ return '<div class="pr"><span class="pr-t">Precio</span><ul>'+l.map(function(x){return '<li><span>'+esc(x[0])+'</span><b>$ '+x[1]+'</b></li>'}).join('')+'</ul></div>';
+}
+var cats=['Todos'];F.forEach(function(f){if(cats.indexOf(f.c)<0)cats.push(f.c)});
+var cur='Todos',g=document.getElementById('ftg'),cb=document.getElementById('ftc');
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function row(k,v){return v?'<dt>'+k+'</dt><dd>'+esc(v)+'</dd>':''}
+cats.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='ft-c';b.textContent=c;b.setAttribute('aria-pressed',c===cur?'true':'false');b.onclick=function(){cur=c;[].forEach.call(cb.children,function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});draw()};cb.appendChild(b)});
+function draw(){
+  g.innerHTML=F.filter(function(f){return cur==='Todos'||f.c===cur}).map(function(f){
+    return '<article class="ft">'+vid(f)+(f.d?'<span class="dur">'+esc(f.d.replace(' con mantenimiento',''))+'</span>':'')+'<h3>'+esc(f.n)+'</h3><p>'+esc(f.q)+'</p><dl>'+row('Rinde',f.r)+'</dl><details><summary>Manos, secado y envases</summary><dl>'+row('Manos',f.h)+row('Secado',f.s)+row('Dilución',f.di)+row('Envases',f.e)+'</dl></details>'+colores(f)+precio(f)+'<p class="desc">Consultá descuentos contado en mostrador.</p><div class="ft-links"><a href="https://drive.google.com/file/d/'+f.id+'/view" target="_blank" rel="noopener">Ver ficha (PDF)</a><a href="https://wa.me/59891333337?text='+encodeURIComponent('Hola La Casa del Impermeabilizante Colonia, quería consultar por '+f.n)+'" target="_blank" rel="noopener">Consultar</a></div></article>';
+  }).join('');
+}
+draw();
+})();
+</script>
+<script>
+(function(){if(!('IntersectionObserver' in window))return;var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!rm){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}}else{v.pause()}})},{threshold:.35});
+function obs(){document.querySelectorAll('video.ft-vid,.reels video').forEach(function(v){if(!v.dataset.io){v.dataset.io=1;io.observe(v)}})}
+obs();new MutationObserver(obs).observe(document.body,{childList:true,subtree:true});})();
+</script>
+
+</body></html>
