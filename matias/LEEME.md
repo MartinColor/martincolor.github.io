@@ -9,6 +9,7 @@ Página: **https://martincolor.github.io/matias/** (no aparece en Google ni tien
 | `Planillas-Matias.xlsx` | Las mismas planillas en Excel (celdas amarillas = completar) |
 | `recordatorios-matias.ics` | Alarmas para el calendario del celular |
 | `pc3/` | **El asistente de la PC3** (Claude de escritorio): instrucciones, equivalencias, presupuesto, productos, avisos. Ver `pc3/LEEME.md` |
+| `instalar-pc3.html` | Instructivo paso a paso para la PC3, con cada archivo para copiar y pegar (lo genera `herramientas/instructivo.py`) |
 | `asistente-matias-pc3.zip` | La carpeta `pc3/` lista para bajar y descomprimir en la PC3 |
 | `herramientas/generar.py` | Regenera el Excel, el .ics, `pc3/productos.md` y el .zip desde `datos.json` |
 | `herramientas/telegram_recordatorio.py` | Lo usa el bot de Telegram |

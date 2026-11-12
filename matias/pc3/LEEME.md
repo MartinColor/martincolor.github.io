@@ -2,7 +2,7 @@
 
 Se arma igual que los asistentes de Francis y Álvaro: Claude de escritorio trabajando sobre una carpeta.
 
-1. **Bajar la carpeta:** https://martincolor.github.io/matias/asistente-matias-pc3.zip
+1. **Seguir el instructivo:** https://martincolor.github.io/matias/instalar-pc3.html (sin .zip: cada archivo se copia y se pega en el Bloc de notas). También está el .zip: https://martincolor.github.io/matias/asistente-matias-pc3.zip
    Descomprimirla en la PC3, por ejemplo en `Documentos\Asistente Matias`.
 2. **Abrir Claude** en la PC3 con la cuenta de Matías y elegir la carpeta `Asistente Matias` para trabajar.
    Las instrucciones están en `CLAUDE.md`: el asistente las lee solo.
