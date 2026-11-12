@@ -22,7 +22,8 @@ RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
 SUMMARY:Abrimos
 DESCRIPTION:Buen día Matías ☀️\n1. Sacá la mercadería de exhibició
  n afuera.\n2. Abrí tu Asistente y mirá la lista de HOY.\n3. Preguntale a
-  Martín si hay algo especial para hoy.
+  Martín si hay algo especial para hoy.\n➡️ Cuando termines: hablá co
+ n Álvaro\, ¿precisa algo o cómo seguís?
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Abrimos
@@ -50,13 +51,33 @@ DTSTAMP:20261112T000000Z
 DTSTART;TZID=America/Montevideo:20261109T084000
 DURATION:PT15M
 RRULE:FREQ=WEEKLY;BYDAY=MO,WE,FR
-SUMMARY:Laboratorio de Martín
-DESCRIPTION:🧪 Laboratorio de Martín en orden:\n☐ Papel cortado\n☐ T
- hinner\n☐ Diluyente\n☐ Mesa limpia y tarros cerrados\nCuando termines\
- , marcalo en el Asistente.
+SUMMARY:Laboratorio de punta en blanco
+DESCRIPTION:🧪 Hoy el laboratorio queda DE PUNTA EN BLANCO\, como dice Ma
+ rtín:\n☐ Botellas y container de diluyente llenos\n☐ Cabina de pintar
+ : agua revisada\n☐ Pistolas limpias\n☐ Piso aspirado\n☐ Mesas limpia
+ s\n☐ Básicos batidos\n☐ Trapos cortados\n☐ Cartones cortados\n☐ E
+ nvases: revisar (si quedan pocos\, avisar a Martín)\n☐ Ventana CERRADA\
+ n➡️ Cuando termines: hablá con Álvaro\, ¿precisa algo o cómo segu
+ ís?
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Laboratorio de Martín
+DESCRIPTION:Laboratorio de punta en blanco
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:matias-batir-basicos@martincolor.github.io
+DTSTAMP:20261112T000000Z
+DTSTART;TZID=America/Montevideo:20261109T085000
+DURATION:PT15M
+RRULE:FREQ=WEEKLY;BYDAY=MO,TH
+SUMMARY:Cambiar y batir los básicos
+DESCRIPTION:🎨 Toca CAMBIAR los básicos y BATIRLOS A TODOS (cada 3 días
+ ).\nNo te saltees ninguno.\n➡️ Cuando termines: hablá con Álvaro\, 
+ ¿precisa algo o cómo seguís?
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cambiar y batir los básicos
 TRIGGER:PT0M
 END:VALARM
 END:VEVENT
@@ -85,7 +106,8 @@ DURATION:PT15M
 RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
 SUMMARY:Volvemos de tarde
 DESCRIPTION:Volvemos 💪\n1. Sacá de nuevo la mercadería de exhibición.
- \n2. ¿Quedó algún reparto sin entregar? Avisale a Martín.
+ \n2. ¿Quedó algún reparto sin entregar? Avisale a Martín.\n➡️ Cuan
+ do termines: hablá con Álvaro\, ¿precisa algo o cómo seguís?
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Volvemos de tarde
@@ -101,7 +123,8 @@ RRULE:FREQ=WEEKLY;BYDAY=TU,TH
 SUMMARY:Control de básicos automotriz
 DESCRIPTION:🚗 Control de básicos automotriz.\nAbrí el Asistente → Pl
  anillas → Básicos.\nMarcá lo que HAY\, lo que hay POCO y lo que NO HAY
- . Al final tocá «Mandar faltantes a Martín».
+ . Al final tocá «Mandar faltantes a Martín».\n➡️ Cuando termines: 
+ hablá con Álvaro\, ¿precisa algo o cómo seguís?
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Control de básicos automotriz
@@ -117,7 +140,8 @@ RRULE:FREQ=WEEKLY;BYDAY=FR
 SUMMARY:Compras de insumos del local
 DESCRIPTION:🧻 Viernes: revisá insumos del local (papel\, bolsas\, cinta
  \, artículos de limpieza…).\nAsistente → Planillas → Compras. Manda
- le la lista a Martín.
+ le la lista a Martín.\n➡️ Cuando termines: hablá con Álvaro\, ¿pre
+ cisa algo o cómo seguís?
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Compras de insumos del local

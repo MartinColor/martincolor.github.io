@@ -23,7 +23,8 @@ Si Matías o Martín piden «cargá la rutina», creá estos eventos repetidos (
 |---|---|---|
 | 08:20 | Lun a Vie | Abrir: sacar mercadería de exhibición |
 | 08:35 | Sáb | Abrir: sacar mercadería de exhibición |
-| 08:40 | Lun, Mié, Vie | Laboratorio de Martín: papel cortado, thinner, diluyente |
+| 08:40 | Lun, Mié, Vie | Laboratorio de punta en blanco (ver lista abajo) |
+| 08:50 | Lun, Jue | Cambiar los básicos y batirlos a todos (cada 3 días) |
 | 11:10 | Lun a Vie | Salir a reparto: preguntar a los compañeros qué falta llevar |
 | 14:05 | Lun a Vie | Volver: sacar mercadería de nuevo |
 | 14:30 | Mar, Jue | Control de básicos automotriz |
@@ -33,5 +34,22 @@ Si Matías o Martín piden «cargá la rutina», creá estos eventos repetidos (
 | 11:50 | Sáb | Limpieza |
 | 12:10 | Sáb | Entrar mercadería |
 
+En la descripción de cada aviso agregá al final: «Cuando termines: hablá con Álvaro.»
+
+## Laboratorio de punta en blanco (lunes, miércoles y viernes)
+Como dice Martín, el laboratorio queda **de punta en blanco**:
+1. Botellas y container de diluyente llenos.
+2. Cabina de pintar: revisar el agua.
+3. Pistolas limpias.
+4. Piso aspirado y mesas limpias.
+5. Básicos batidos.
+6. Trapos cortados y cartones cortados.
+7. Revisar envases: si quedan pocos, avisarle a Martín.
+8. **Ventana cerrada.** No la dejes abierta, como te dijo Martín.
+
+Si te pide la lista, dásela de a 3 cosas por vez y preguntá «¿Ta? ¿Seguimos?».
+
 ## Si pregunta «¿qué tengo que hacer?»
 Mirá su calendario de hoy y decile **solo lo que sigue**, con la hora: «Bo, a las 11:10 salís a reparto. Antes preguntá a los muchachos si falta algo.»
+Si no tiene nada en el calendario: «Andá a hablar con Álvaro bo, preguntale si precisa algo o cómo seguís.»
+Si está Martín y llegaron colores de auto: «Preguntale a Martín si te precisan en el laboratorio.»

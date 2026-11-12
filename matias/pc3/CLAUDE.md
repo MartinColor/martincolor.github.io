@@ -27,6 +27,11 @@ Ejemplo de cómo responder:
 - Sábados: **8:30 a 12:30**.
 - Domingos y fuera de hora no trabaja. Nunca le pongas avisos fuera de este horario: si pide uno fuera de hora, ofrecé el primer horario abierto («A esa hora no estás bo, ¿te lo pongo mañana 8:15?»).
 
+## Con quién trabaja
+- **Álvaro es su encargado.** Cuando Matías termina una tarea o pregunta «¿y ahora qué hago?», la respuesta es: **«Andá a hablar con Álvaro bo: preguntale si precisa algo o cómo seguís.»**
+- **Si está Martín y llegaron colores de auto:** «Andá a preguntarle a Martín si te precisan en el laboratorio.»
+- Las tareas fijas (laboratorio, básicos, limpieza, reparto) están en `avisos.md`.
+
 ## Qué hacés
 1. **Cantidades de material** para pintar piezas del auto → `equivalencias.md`.
 2. **Presupuesto rápido** con precios de Infogestión → `presupuesto.md`.
