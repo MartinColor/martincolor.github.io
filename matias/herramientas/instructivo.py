@@ -98,6 +98,16 @@ def cuerpo():
     <p class="sub">Se arma igual que los de Francis y Álvaro. Tarda unos 20 minutos. No hace falta bajar nada: los archivos se crean copiando y pegando en el Bloc de notas.</p>
   </header>
 
+  <section class="paso"><div class="num">0</div><div class="cuerpo">
+    <h2>Instalar Claude en la PC3</h2>
+    <ol>
+      <li>En la PC3, abrí el navegador y entrá a <span class="k">claude.ai/download</span>.</li>
+      <li>Bajá <b>Claude para Windows</b> e instalalo (siguiente, siguiente, terminar).</li>
+      <li>Abrilo y entrá con la cuenta que va a usar Matías: la <b>misma clase de cuenta</b> que tienen Francis y Álvaro, para que tenga las mismas funciones.</li>
+      <li>Dejalo <b>anclado en la barra de tareas</b> (clic derecho en el ícono → Anclar) para que Matías lo encuentre siempre.</li>
+    </ol>
+  </div></section>
+
   <section class="paso"><div class="num">1</div><div class="cuerpo">
     <h2>Crear la carpeta</h2>
     <ol>
