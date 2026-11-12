@@ -1,0 +1,223 @@
+{
+  "_nota": "Fuente única del Asistente de Matías. La usan matias/index.html, el bot de Telegram (.github/workflows/recordatorios-matias.yml) y matias/herramientas/generar.py (Excel + calendario). Horas en hora de Uruguay. Días: 1=lunes ... 6=sábado, 7=domingo.",
+  "whatsapp_martin": "59891333337",
+
+  "productos": [
+    {"id": "barniz",       "codigo": "B21.11",   "nombre": "Barniz 2K (alto sólido)",                  "unidad": "L",  "grupo": "Barniz",       "verificar": true},
+    {"id": "cat-barniz",   "codigo": "010.021",  "nombre": "Catalizador para barniz",                  "unidad": "L",  "grupo": "Barniz",       "verificar": true},
+    {"id": "base",         "codigo": "BASE",     "nombre": "Pintura base poliéster (color a preparar)", "unidad": "L",  "grupo": "Color",        "color": true},
+    {"id": "poliuretano",  "codigo": "PU",       "nombre": "Pintura poliuretano (color a preparar)",   "unidad": "L",  "grupo": "Color",        "color": true},
+    {"id": "cat-pu",       "codigo": "CAT-PU",   "nombre": "Catalizador para poliuretano",             "unidad": "L",  "grupo": "Color",        "verificar": true},
+    {"id": "fondo",        "codigo": "P41.04",   "nombre": "Fondo relleno",                            "unidad": "L",  "grupo": "Fondo",        "verificar": true},
+    {"id": "cat-fondo",    "codigo": "ND010.16", "nombre": "Catalizador para fondo",                   "unidad": "L",  "grupo": "Fondo",        "verificar": true},
+    {"id": "masilla",      "codigo": "SPRINT",   "nombre": "Masilla Sprint 1 kg (con endurecedor)",    "unidad": "u",  "grupo": "Masilla"},
+    {"id": "lija-80",      "codigo": "L80",      "nombre": "Lija grano 80 (en seco) – masilla",        "unidad": "u",  "grupo": "Lijas"},
+    {"id": "lija-150",     "codigo": "L150",     "nombre": "Lija grano 150 (en seco) – masilla",       "unidad": "u",  "grupo": "Lijas"},
+    {"id": "lija-240",     "codigo": "L240",     "nombre": "Lija grano 240 (en seco) – masilla",       "unidad": "u",  "grupo": "Lijas"},
+    {"id": "lija-320",     "codigo": "L320",     "nombre": "Lija grano 320 (en seco) – fondo",         "unidad": "u",  "grupo": "Lijas"},
+    {"id": "lija-600",     "codigo": "L600A",    "nombre": "Lija grano 600 al agua – fondo",           "unidad": "u",  "grupo": "Lijas"},
+    {"id": "lija-800",     "codigo": "L800A",    "nombre": "Lija grano 800 al agua – terminar fondo",  "unidad": "u",  "grupo": "Lijas"},
+    {"id": "lija-1000",    "codigo": "L1000A",   "nombre": "Lija grano 1000 al agua – terminar fondo", "unidad": "u",  "grupo": "Lijas"},
+    {"id": "diluyente",    "codigo": "DIL",      "nombre": "Diluyente (thinner) 1 L",                  "unidad": "L",  "grupo": "Diluyente"},
+    {"id": "f351",         "codigo": "F351",     "nombre": "Esmalte epoxi F351 (PPG, preparado en el local)", "unidad": "L", "grupo": "Epoxi", "color": true, "verificar": true},
+    {"id": "cat-f351",     "codigo": "CAT-F351", "nombre": "Catalizador para epoxi F351",              "unidad": "L",  "grupo": "Epoxi",        "verificar": true},
+    {"id": "cinta",        "codigo": "CINTA",    "nombre": "Cinta de enmascarar",                      "unidad": "u",  "grupo": "Extras"},
+    {"id": "papel",        "codigo": "PAPEL",    "nombre": "Papel para enmascarar",                    "unidad": "u",  "grupo": "Extras"},
+    {"id": "atrapapolvo",  "codigo": "PAÑO",     "nombre": "Paño atrapapolvo",                         "unidad": "u",  "grupo": "Extras"},
+    {"id": "pincel",       "codigo": "PINCEL",   "nombre": "Pincel",                                   "unidad": "u",  "grupo": "Extras"}
+  ],
+
+  "kits": [
+    {
+      "id": "bicapa",
+      "nombre": "Base poliéster + barniz (2 o 3 piezas)",
+      "explicacion": "El trabajo más común: masilla, fondo, color base poliéster y barniz encima.",
+      "lineas": [
+        ["masilla", 1], ["lija-80", 3], ["lija-150", 3], ["lija-240", 3],
+        ["fondo", 1], ["cat-fondo", 1],
+        ["lija-320", 3], ["lija-600", 3], ["lija-800", 3],
+        ["base", 0.5],
+        ["barniz", 1], ["cat-barniz", 0.5],
+        ["diluyente", 1]
+      ]
+    },
+    {
+      "id": "poliuretano",
+      "nombre": "Poliuretano (2 o 3 piezas)",
+      "explicacion": "Color y brillo en una sola pintura. No lleva barniz.",
+      "lineas": [
+        ["masilla", 1], ["lija-80", 3], ["lija-150", 3], ["lija-240", 3],
+        ["fondo", 1], ["cat-fondo", 1],
+        ["lija-320", 3], ["lija-600", 3], ["lija-800", 3],
+        ["poliuretano", 1], ["cat-pu", 0.5],
+        ["diluyente", 1]
+      ]
+    },
+    {
+      "id": "reparacion",
+      "nombre": "Solo masilla y fondo (el cliente pinta en otro lado)",
+      "explicacion": "Para el que quiere dejar la pieza preparada.",
+      "lineas": [
+        ["masilla", 1], ["lija-80", 3], ["lija-150", 3], ["lija-240", 3],
+        ["fondo", 1], ["cat-fondo", 1],
+        ["lija-320", 3], ["lija-600", 3], ["lija-800", 3],
+        ["diluyente", 1]
+      ]
+    },
+    {
+      "id": "epoxi",
+      "nombre": "Epoxi F351 a pincel (interior)",
+      "explicacion": "Esmalte epoxi para metal, galvanizado o aluminio en interiores.",
+      "lineas": [
+        ["f351", 1], ["cat-f351", 1], ["diluyente", 1], ["lija-240", 2], ["pincel", 1]
+      ]
+    }
+  ],
+
+  "recordatorios": [
+    {"id": "apertura",     "hora": "08:20", "dias": [1,2,3,4,5], "titulo": "Abrimos",
+     "texto": "Buen día Matías ☀️\n1. Sacá la mercadería de exhibición afuera.\n2. Abrí tu Asistente y mirá la lista de HOY.\n3. Preguntale a Martín si hay algo especial para hoy."},
+    {"id": "apertura-sab", "hora": "08:35", "dias": [6],         "titulo": "Abrimos (sábado)",
+     "texto": "Buen día Matías ☀️ Es sábado: cerramos 12:30.\n1. Sacá la mercadería de exhibición.\n2. Mirá la lista de HOY en tu Asistente."},
+    {"id": "laboratorio",  "hora": "08:40", "dias": [1,3,5],     "titulo": "Laboratorio de Martín",
+     "texto": "🧪 Laboratorio de Martín en orden:\n☐ Papel cortado\n☐ Thinner\n☐ Diluyente\n☐ Mesa limpia y tarros cerrados\nCuando termines, marcalo en el Asistente."},
+    {"id": "reparto",      "hora": "11:10", "dias": [1,2,3,4,5], "titulo": "Salir a reparto",
+     "texto": "🚚 Son las 11:10: HORA DE REPARTO.\n1. Preguntá a tus compañeros: ¿hay algo más para llevar?\n2. Anotá cada entrega en la planilla de Reparto.\n3. Revisá que cada pedido tenga su boleta.\n4. Si hay que cobrar, anotá cuánto y cómo pagó."},
+    {"id": "tarde",        "hora": "14:05", "dias": [1,2,3,4,5], "titulo": "Volvemos de tarde",
+     "texto": "Volvemos 💪\n1. Sacá de nuevo la mercadería de exhibición.\n2. ¿Quedó algún reparto sin entregar? Avisale a Martín."},
+    {"id": "basicos",      "hora": "14:30", "dias": [2,4],       "titulo": "Control de básicos automotriz",
+     "texto": "🚗 Control de básicos automotriz.\nAbrí el Asistente → Planillas → Básicos.\nMarcá lo que HAY, lo que hay POCO y lo que NO HAY. Al final tocá «Mandar faltantes a Martín»."},
+    {"id": "compras",      "hora": "15:05", "dias": [5],         "titulo": "Compras de insumos del local",
+     "texto": "🧻 Viernes: revisá insumos del local (papel, bolsas, cinta, artículos de limpieza…).\nAsistente → Planillas → Compras. Mandale la lista a Martín."},
+    {"id": "limpieza",     "hora": "17:20", "dias": [1,2,3,4,5], "titulo": "Limpieza",
+     "texto": "🧹 Limpieza antes de cerrar:\n☐ Aspirar TODOS los pisos\n☐ Mostrador y vidrios\n☐ Sacar la basura\nMarcalo en el Asistente → Planillas → Limpieza."},
+    {"id": "cierre",       "hora": "17:45", "dias": [1,2,3,4,5], "titulo": "Entrar mercadería",
+     "texto": "📦 Hora de entrar la mercadería.\nSi tus compañeros no llegaron a entrar las cosas, NO PASA NADA 🙂 Respirá y hacelo de a una: primero lo más pesado, después lo chico. Hay tiempo."},
+    {"id": "limpieza-sab", "hora": "11:50", "dias": [6],         "titulo": "Limpieza (sábado)",
+     "texto": "🧹 Sábado: aspirar pisos, mostrador y basura antes de cerrar."},
+    {"id": "cierre-sab",   "hora": "12:10", "dias": [6],         "titulo": "Entrar mercadería (sábado)",
+     "texto": "📦 Entrá la mercadería con calma, de a una. ¡Buen fin de semana! 🙌"}
+  ],
+
+  "planillas": {
+    "basicos": [
+      "Barniz B21.11", "Catalizador barniz 010.021", "Fondo P41.04", "Catalizador fondo ND010.16",
+      "Diluyente / thinner", "Masilla Sprint 1 kg", "Endurecedor de masilla",
+      "Base poliéster: tintas de mezcla", "Poliuretano: tintas de mezcla", "Catalizador poliuretano",
+      "Epoxi F351 y su catalizador",
+      "Lija 80", "Lija 150", "Lija 240", "Lija 320", "Lija 400", "Lija 600 al agua", "Lija 800 al agua", "Lija 1000 al agua", "Lija 1200 al agua",
+      "Cinta de enmascarar", "Papel para enmascarar", "Paños atrapapolvo", "Desengrasante",
+      "Vasos medidores", "Coladores / filtros de pintura", "Guantes"
+    ],
+    "compras": [
+      "Papel higiénico", "Papel de cocina / rollos", "Bolsas para clientes", "Bolsas de residuo",
+      "Detergente", "Limpiador de pisos", "Lavandina", "Trapos / paños", "Bolsas de la aspiradora",
+      "Cinta para paquetes", "Rollo de la impresora / talonarios", "Café / yerba / azúcar", "Agua"
+    ],
+    "limpieza": [
+      "Aspirar TODOS los pisos", "Trapear la entrada", "Mostrador limpio", "Vidrios de la puerta",
+      "Estanterías sin polvo", "Laboratorio: tarros cerrados", "Sacar la basura", "Baño"
+    ],
+    "laboratorio": ["Papel cortado", "Thinner", "Diluyente", "Mesa limpia", "Tarros bien cerrados"]
+  },
+
+  "fichas": [
+    {
+      "id": "base-poliester",
+      "titulo": "Base poliéster (PPG Deltron)",
+      "corto": "Da el COLOR. Seca mate. SIEMPRE lleva barniz encima.",
+      "puntos": [
+        "Es el sistema bicapa: 1.º la base de color, 2.º el barniz.",
+        "La base sola queda opaca y es débil: no aguanta sol, lluvia, rayones ni nafta.",
+        "El barniz le da el BRILLO y la PROTECCIÓN. Sin barniz, en poco tiempo se mancha y se pela.",
+        "Se aplica con soplete sobre el fondo ya lijado (terminado con lija 800 o 1000 al agua).",
+        "Se diluye con diluyente. La proporción exacta está en la ficha técnica."
+      ],
+      "decir": "«Esta pintura da el color, pero sí o sí lleva barniz arriba: el barniz es el que le da brillo y la protege del sol.»",
+      "videos": ["como pintar base poliester bicapa auto", "por que la pintura bicapa lleva barniz", "PPG Deltron base bicapa aplicacion"],
+      "ficha": "PPG Deltron base ficha técnica"
+    },
+    {
+      "id": "barniz",
+      "titulo": "Barniz 2K (B21.11 + catalizador 010.021)",
+      "corto": "Brillo y protección. Va arriba de la base poliéster.",
+      "puntos": [
+        "Siempre se mezcla con su catalizador. Ejemplo que usamos: 1 L de barniz + ½ L de catalizador = 1,5 L listos.",
+        "Una vez mezclado tiene un tiempo de uso limitado: preparar solo lo que se va a usar.",
+        "Se aplica en 2 manos con soplete sobre la base."
+      ],
+      "decir": "«El barniz viene en dos partes: el barniz y el catalizador. Se mezclan en el momento de pintar.»",
+      "videos": ["como aplicar barniz automotriz 2k", "mezcla barniz catalizador auto"],
+      "ficha": "PPG barniz 2K ficha técnica"
+    },
+    {
+      "id": "poliuretano",
+      "titulo": "Poliuretano para autos",
+      "corto": "Color + brillo en UNA sola pintura. No lleva barniz.",
+      "puntos": [
+        "Se llama monocapa: no necesita barniz.",
+        "Se mezcla con su catalizador y diluyente (proporción en la ficha).",
+        "Es buena opción para colores lisos (no metalizados), camiones, maquinaria y piezas.",
+        "Los colores metalizados y perlados van en base poliéster + barniz, no en poliuretano."
+      ],
+      "decir": "«El poliuretano ya trae el brillo, no lleva barniz. Es más simple pero va para colores lisos.»",
+      "videos": ["como pintar auto con poliuretano", "pintura poliuretano monocapa automotriz aplicacion"],
+      "ficha": "PPG poliuretano automotriz ficha técnica"
+    },
+    {
+      "id": "fondo",
+      "titulo": "Fondo relleno P41.04 (+ catalizador ND010.16)",
+      "corto": "Va sobre la chapa y la masilla. Rellena y deja todo parejo.",
+      "puntos": [
+        "Siempre con su catalizador.",
+        "Se lija con 320 en seco, después 600 al agua y se termina con 800 o 1000 al agua.",
+        "Sin fondo bien lijado, la pintura no queda lisa."
+      ],
+      "decir": "«El fondo es la base de todo: si queda bien lijado, la pintura queda como de fábrica.»",
+      "videos": ["como aplicar fondo relleno 2k auto", "como lijar fondo al agua 600 800"],
+      "ficha": "PPG fondo relleno 2K ficha técnica"
+    },
+    {
+      "id": "masilla",
+      "titulo": "Masilla Sprint",
+      "corto": "Tapa golpes y abolladuras chicas.",
+      "puntos": [
+        "Se mezcla con poquito endurecedor (viene con la masilla). Mucho endurecedor = se mancha.",
+        "Se lija con 80, después 150 y se termina con 240, todo en seco.",
+        "Capas finas, no un pegote grueso."
+      ],
+      "decir": "«La masilla es para los golpes. Después de lijarla va el fondo.»",
+      "videos": ["como masillar y lijar un golpe de auto", "masilla poliester automotriz como usar"],
+      "ficha": "masilla poliester automotriz ficha técnica"
+    },
+    {
+      "id": "lijas",
+      "titulo": "Qué lijas lleva un trabajo (2 o 3 piezas)",
+      "corto": "3 de cada una. Para 2 o 3 piezas no hace falta más.",
+      "puntos": [
+        "Para la MASILLA, en seco: 3 de 80 · 3 de 150 · 3 de 240.",
+        "Para el FONDO: 3 de 320 en seco · 3 de 600 al agua · 3 de 800 (o 1000) al agua.",
+        "Número chico = lija gruesa (saca mucho). Número grande = lija fina (deja liso)."
+      ],
+      "decir": "«Empieza con la gruesa y termina con la fina.»",
+      "videos": ["orden de lijas para pintar un auto"],
+      "ficha": ""
+    },
+    {
+      "id": "f351",
+      "titulo": "Epoxi F351 (PPG, la preparamos nosotros)",
+      "corto": "Esmalte epoxi a pincel. Agarra en galvanizado y aluminio. SOLO INTERIOR.",
+      "puntos": [
+        "Es un ESMALTE epoxi: se puede dar a pincel. NO es un epoxi autonivelante para pisos.",
+        "Lleva catalizador: se mezcla en el momento (proporción en la ficha).",
+        "Agarra muy bien en hierro, chapa galvanizada y aluminio.",
+        "Es muy resistente a golpes, aceites y productos químicos.",
+        "NO sirve para exteriores: con el sol se pone opaca y se tiza (queda como polvillo). Para afuera, después de la epoxi va una terminación de poliuretano.",
+        "Usos: piezas, maquinaria, estructuras y portones bajo techo, talleres, chapas galvanizadas interiores."
+      ],
+      "decir": "«Es una epoxi que se da a pincel y agarra hasta en galvanizado, pero es para adentro: el sol la arruina.»",
+      "videos": ["como aplicar pintura epoxi a pincel sobre galvanizado", "por que la pintura epoxi no sirve para exterior"],
+      "ficha": "PPG F351 epoxi ficha técnica"
+    }
+  ]
+}
