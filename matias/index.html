@@ -84,6 +84,12 @@ nav.tabs button[aria-current="page"]{color:#fff;box-shadow:inset 0 3px 0 var(--r
 .linea .sub{font-weight:800;text-align:right;min-width:92px;padding-bottom:12px}
 .linea .color{grid-column:1/-1}
 .quitar{min-height:40px;padding:6px 10px;border-color:var(--linea);font-size:14px}
+.contador{display:flex;align-items:center;gap:10px}
+.contador button{width:56px;font-size:24px;border-color:var(--linea);background:var(--fondo)}
+.contador output{font:800 30px/1 var(--f-texto);min-width:48px;text-align:center}
+.equiv{width:100%;border-collapse:collapse;font-size:14px}
+.equiv th,.equiv td{text-align:left;padding:8px 6px;border-top:1px solid var(--linea)}
+.equiv th{font-size:12px;color:var(--suave)}
 .total{display:flex;justify-content:space-between;align-items:baseline;background:var(--negro);color:#fff;border-radius:var(--r);padding:18px}
 .total b{font:800 28px/1 var(--f-texto)}
 
@@ -170,6 +176,13 @@ details.card[open] summary{margin-bottom:12px}
       <div class="card pila no-print">
         <h3>2 · ¿Qué piezas?</h3>
         <div class="chips" id="piezas"></div>
+        <div class="camp" style="font-weight:700;font-size:14px">¿Cuántas piezas en total?</div>
+        <div class="fila-btn" style="align-items:center">
+          <div class="contador"><button type="button" id="n-menos" aria-label="Una pieza menos">−</button><output id="n-piezas">3</output><button type="button" id="n-mas" aria-label="Una pieza más">+</button></div>
+          <button type="button" class="btn-s" id="medio-auto">Medio auto</button>
+        </div>
+        <p class="aviso" id="aviso-auto" hidden>Ojo bo: para tantas piezas o el auto entero, confirmá las cantidades con Martín.</p>
+        <details><summary class="nota" style="cursor:pointer">¿De dónde salen las cantidades?</summary><table class="equiv" id="equiv"></table></details>
         <label class="camp">Nombre del cliente (si querés)
           <input id="cliente" autocomplete="off" placeholder="Ej: Juan">
         </label>
@@ -181,7 +194,7 @@ details.card[open] summary{margin-bottom:12px}
           <h2>Martín Color · Presupuesto orientativo</h2>
           <p id="print-cab"></p>
         </div>
-        <p class="nota no-print">Buscá cada código en Infogestión y copiá el precio. El Asistente se acuerda del precio para la próxima vez. Podés cambiar las cantidades.</p>
+        <p class="nota no-print">Las cantidades salen solas según las piezas. Buscá cada código en Infogestión y copiá el precio: el Asistente se acuerda para la próxima. Si querés, cambiá una cantidad a mano.</p>
         <div id="lineas"></div>
         <div class="fila-btn no-print" style="margin-top:8px">
           <select id="agregar-sel" aria-label="Agregar producto"></select>
@@ -262,7 +275,12 @@ function hoyUY(){ // fecha y hora en Uruguay
 var fmt=new Intl.NumberFormat("es-UY",{maximumFractionDigits:0});
 function plata(n){return "$ "+fmt.format(Math.round(n||0))}
 function num(v){var n=parseFloat(String(v).replace(",","."));return isFinite(n)?n:0}
-function cantTxt(c,u){var s=String(c).replace(".",",");return u==="L"?(c===0.5?"½ L":s+" L"):(s+(u==="u"?"":" "+u))}
+function cantTxt(c,u){
+  var s=String(c).replace(".",","),fr={0.25:"¼",0.5:"½",0.75:"¾"};
+  if(u==="kg")return c<1?Math.round(c*1000)+" g":s+" kg";
+  if(u==="L")return (fr[c]||s)+" L";
+  return s;
+}
 function waLink(numero,texto){return "https://wa.me/"+(numero||"")+"?text="+encodeURIComponent(texto)}
 function celUY(v){var d=String(v||"").replace(/\D/g,"");if(!d)return "";if(d.indexOf("598")===0)return d;if(d.charAt(0)==="0")d=d.slice(1);return "598"+d}
 function abrir(url){window.open(url,"_blank","noopener")}
@@ -308,15 +326,27 @@ function sumarMin(hhmm,m){var p=hhmm.split(":"),t=(+p[0])*60+(+p[1])+m;if(t<0)t=
 var PIEZAS=["Paragolpe delantero","Paragolpe trasero","Capot","Puerta","Guardabarro","Techo","Baúl / portón","Zócalo","Espejo","Otra"];
 var P={};       // productos por id
 var presu;      // estado
-function presuVacio(){return {kit:null,piezas:[],cliente:"",cel:"",lineas:[]}}
-function lineaDe(pid,cant){
+function presuVacio(){return {kit:null,piezas:[],n:3,cliente:"",cel:"",lineas:[]}}
+function r2(x){return Math.round(x*100)/100}
+function cantRegla(regla,n,hechas){
+  if(typeof regla==="number")return r2(Math.ceil(n/3)*regla);
+  if(regla.por_pieza)return r2(Math.ceil(n*regla.por_pieza/regla.redondear-1e-6)*regla.redondear);
+  if(regla.de)return r2((hechas[regla.de]||0)*regla.factor);
+  return 1;
+}
+function kitActual(){return D.kits.filter(function(x){return x.id===presu.kit})[0]}
+function recalcular(){ // ajusta cantidades de las líneas del trabajo según las piezas
+  var k=kitActual(); if(!k)return; var n=k.fijo?3:presu.n, hechas={};
+  presu.lineas.forEach(function(l){if(l.regla!==undefined){l.cant=cantRegla(l.regla,n,hechas);hechas[l.pid]=l.cant}});
+}
+function lineaDe(pid,cant,regla){
   var p=P[pid],precios=leer("mc-precios",{});
-  return {pid:pid,codigo:p.codigo,nombre:p.nombre,unidad:p.unidad,cant:cant,precio:precios[pid]||"",color:p.color?"":null,verificar:!!p.verificar};
+  return {regla:regla,pid:pid,codigo:p.codigo,nombre:p.nombre,unidad:p.unidad,cant:cant,precio:precios[pid]||"",color:p.color?"":null,verificar:!!p.verificar};
 }
 function elegirKit(id){
   var k=D.kits.filter(function(x){return x.id===id})[0];
   if(presu.lineas.length&&presu.kit!==id&&!confirm("¿Cambiar el trabajo? Se borra la lista de productos de abajo."))return;
-  presu.kit=id; presu.lineas=k.lineas.map(function(l){return lineaDe(l[0],l[1])});
+  presu.kit=id; presu.lineas=k.lineas.map(function(l){return lineaDe(l[0],0,l[1])}); recalcular();
   guardarPresu(); pintarPresu();
 }
 function guardarPresu(){guardar("mc-presu",presu)}
@@ -331,12 +361,19 @@ function pintarPiezas(){
   $("#piezas").innerHTML=PIEZAS.map(function(p){return '<button type="button" class="chip" aria-pressed="'+(presu.piezas.indexOf(p)>=0)+'">'+esc(p)+'</button>'}).join("");
   $$("#piezas .chip").forEach(function(b){b.addEventListener("click",function(){
     var t=b.textContent,i=presu.piezas.indexOf(t); if(i>=0)presu.piezas.splice(i,1);else presu.piezas.push(t);
-    b.setAttribute("aria-pressed",i<0); guardarPresu(); cabeceraPrint();
-    if(presu.piezas.length>3)alerta3();
+    b.setAttribute("aria-pressed",i<0);
+    if(presu.piezas.length)ponerN(presu.piezas.length); else {guardarPresu(); cabeceraPrint()}
   })});
 }
-var avisado=false;
-function alerta3(){if(avisado)return;avisado=true;alert("Ojo: son más de 3 piezas. Las cantidades de la lista son para 2 o 3 piezas. Subí litros de fondo, color, barniz y diluyente (preguntale a Martín si dudás).")}
+function ponerN(n){
+  presu.n=Math.max(1,Math.min(20,n)); $("#n-piezas").textContent=presu.n;
+  $("#aviso-auto").hidden=presu.n<6; recalcular(); guardarPresu(); pintarLineas(); cabeceraPrint();
+}
+function pintarEquiv(){
+  $("#equiv").innerHTML='<tr><th></th><th>Por pieza</th><th>3 piezas</th></tr>'+D.equivalencias.tabla.map(function(e){
+    return '<tr><td><b>'+esc(e.que)+'</b></td><td>'+esc(e.por_pieza)+'</td><td>'+esc(e.tres_piezas)+'</td></tr>'}).join("");
+  $("#medio-auto").textContent="Medio auto ("+D.equivalencias.medio_auto_piezas+" piezas)";
+}
 function pintarLineas(){
   var c=$("#lineas");
   if(!presu.lineas.length){c.innerHTML='<p class="nota">Elegí arriba qué quiere hacer el cliente y aparece la lista.</p>';$("#total").textContent=plata(0);return}
@@ -346,7 +383,7 @@ function pintarLineas(){
       '<div class="cod">Código: '+esc(l.codigo||"—")+(l.verificar?' · <span class="verif">verificar código</span>':'')+'</div></div>'+
       '<button type="button" class="quitar btn-s no-print" data-q aria-label="Quitar '+esc(l.nombre)+'">Quitar</button>'+
       (l.color!==null&&l.color!==undefined?'<label class="camp color">Color<input data-f="color" value="'+esc(l.color)+'" placeholder="Ej: Blanco Toyota 040"></label>':'')+
-      '<div class="nums"><label>Cantidad'+(l.unidad==="L"?" (L)":"")+'<input data-f="cant" inputmode="decimal" value="'+esc(String(l.cant).replace(".",","))+'"></label>'+
+      '<div class="nums"><label>Cantidad'+(l.unidad==="L"?" (L)":l.unidad==="kg"?" (kg)":"")+'<input data-f="cant" inputmode="decimal" value="'+esc(String(l.cant).replace(".",","))+'"></label>'+
       '<label>Precio unidad $<input data-f="precio" inputmode="decimal" value="'+esc(l.precio)+'" placeholder="Infogestión"></label>'+
       '<div class="sub">'+plata(num(l.cant)*num(l.precio))+'</div></div></div>';
   }).join("");
@@ -379,20 +416,24 @@ function textoPresu(){
   var t=["*Martín Color · Presupuesto orientativo*"];
   if(presu.cliente)t.push("Cliente: "+presu.cliente);
   if(presu.piezas.length)t.push("Piezas: "+presu.piezas.join(", "));
+  else if(k&&!k.fijo)t.push("Piezas: "+presu.n);
   if(k)t.push("Trabajo: "+k.nombre.replace(/ \(.*\)$/,""));
   t.push("");
   presu.lineas.forEach(function(l){
     var n=l.nombre+(l.color?" – color "+l.color:"");
     t.push("• "+cantTxt(num(l.cant),l.unidad)+" "+n+(num(l.precio)?" → "+plata(num(l.cant)*num(l.precio)):""));
   });
-  t.push("","*TOTAL: "+plata(totalPresu())+"*","Precios con IVA. Válido por 7 días.","Cantidades estimadas; pueden variar según el trabajo.");
+  t.push("","*TOTAL: "+plata(totalPresu())+"*","Precios con IVA. Válido por 7 días.","Cantidades aproximadas; pueden variar según el estado de las piezas.");
   return t.join("\n");
 }
-function pintarPresu(){pintarKits();pintarPiezas();pintarLineas();cabeceraPrint();$("#cliente").value=presu.cliente||"";$("#cel-cliente").value=presu.cel||""}
+function pintarPresu(){pintarKits();pintarPiezas();$("#n-piezas").textContent=presu.n;$("#aviso-auto").hidden=presu.n<6;pintarLineas();cabeceraPrint();$("#cliente").value=presu.cliente||"";$("#cel-cliente").value=presu.cel||""}
 function initPresu(){
   D.productos.forEach(function(p){P[p.id]=p});
-  presu=leer("mc-presu",null)||presuVacio();
-  pintarAgregar(); pintarPresu();
+  presu=leer("mc-presu",null)||presuVacio(); if(!presu.n)presu.n=3;
+  pintarAgregar(); pintarEquiv(); pintarPresu();
+  $("#n-menos").addEventListener("click",function(){ponerN(presu.n-1)});
+  $("#n-mas").addEventListener("click",function(){ponerN(presu.n+1)});
+  $("#medio-auto").addEventListener("click",function(){ponerN(D.equivalencias.medio_auto_piezas)});
   $("#cliente").addEventListener("input",function(e){presu.cliente=e.target.value;guardarPresu();cabeceraPrint()});
   $("#cel-cliente").addEventListener("input",function(e){presu.cel=e.target.value;guardarPresu()});
   $("#agregar-btn").addEventListener("click",function(){
@@ -405,7 +446,7 @@ function initPresu(){
     abrir(waLink(celUY(presu.cel),textoPresu()));
   });
   $("#presu-copiar").addEventListener("click",function(e){copiar(textoPresu(),e.currentTarget)});
-  $("#presu-nuevo").addEventListener("click",function(){if(confirm("¿Borrar este presupuesto y empezar otro? (Los precios quedan guardados)")){presu=presuVacio();avisado=false;guardarPresu();pintarPresu();window.scrollTo(0,0)}});
+  $("#presu-nuevo").addEventListener("click",function(){if(confirm("¿Borrar este presupuesto y empezar otro? (Los precios quedan guardados)")){presu=presuVacio();guardarPresu();pintarPresu();window.scrollTo(0,0)}});
 }
 
 /* ======================= PLANILLAS ======================= */

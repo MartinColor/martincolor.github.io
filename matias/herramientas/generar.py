@@ -5,6 +5,7 @@ Uso:  python3 matias/herramientas/generar.py      (necesita: pip install openpyx
 Volver a correrlo cada vez que se cambie datos.json.
 """
 import json
+import zipfile
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -58,21 +59,40 @@ def grilla(ws, desde, hasta, ncols, editables=()):
 def hoja_presupuesto(wb, kit):
     ws = wb.create_sheet(("Presu " + kit["id"])[:31])
     titulo(ws, "Martín Color · Presupuesto orientativo", kit["nombre"])
-    ws["A3"], ws["A4"] = "Cliente:", "Piezas:"
-    for c in ("A3", "A4"):
+    ws["A3"], ws["A4"], ws["A5"] = "Cliente:", "Piezas:", "Cuántas piezas:"
+    for c in ("A3", "A4", "A5"):
         ws[c].font = Font(bold=True)
-    for c in ("B3", "B4"):
+    for c in ("B3", "B4", "B5"):
         ws[c].fill = EDIT_FILL
     ws.merge_cells("B3:F3")
     ws.merge_cells("B4:F4")
+    if kit.get("fijo"):
+        ws["A5"] = None
+        ws["B5"].fill = PatternFill()
+    else:
+        ws["B5"] = 3
+        ws["B5"].font = Font(bold=True, size=14)
+        ws["C5"] = "← cambiá este número y las cantidades se calculan solas"
+        ws["C5"].font = Font(italic=True, color=ROJO)
     cabecera(ws, 6, ["Código", "Producto", "Color", "Cantidad", "Precio unidad $\n(Infogestión)", "Subtotal $"],
              [12, 44, 18, 11, 16, 15])
     fila = 7
-    for pid, cant in kit["lineas"]:
+    filas = {}
+    for pid, regla in kit["lineas"]:
         p = PROD[pid]
         ws.cell(row=fila, column=1, value=p["codigo"])
-        ws.cell(row=fila, column=2, value=p["nombre"] + (" (verificar código)" if p.get("verificar") else ""))
+        nombre = p["nombre"] + (f" ({p['unidad']})" if p["unidad"] in ("L", "kg") else "")
+        ws.cell(row=fila, column=2, value=nombre + (" (verificar código)" if p.get("verificar") else ""))
+        if kit.get("fijo"):
+            cant = regla
+        elif isinstance(regla, (int, float)):
+            cant = f"=ROUNDUP($B$5/3,0)*{regla}"
+        elif "por_pieza" in regla:
+            cant = f"=ROUNDUP($B$5*{regla['por_pieza']}/{regla['redondear']},0)*{regla['redondear']}"
+        else:
+            cant = f"=D{filas[regla['de']]}*{regla['factor']}"
         ws.cell(row=fila, column=4, value=cant)
+        filas[pid] = fila
         ws.cell(row=fila, column=6, value=f"=D{fila}*E{fila}")
         fila += 1
     extra_hasta = fila + 3  # filas libres para agregar productos
@@ -86,7 +106,7 @@ def hoja_presupuesto(wb, kit):
     ws.cell(row=t, column=5, value="TOTAL").font = Font(bold=True, size=14)
     tot = ws.cell(row=t, column=6, value=f"=SUM(F7:F{extra_hasta})")
     tot.font, tot.number_format = Font(bold=True, size=14, color=ROJO), '"$" #,##0'
-    ws.cell(row=t + 2, column=1, value="Precios con IVA. Válido por 7 días. Cantidades para 2 o 3 piezas: si son más, subir litros.") \
+    ws.cell(row=t + 2, column=1, value="Precios con IVA. Válido por 7 días. Cantidades aproximadas según las piezas.") \
         .font = Font(italic=True, color="5F5B6B")
     ws.cell(row=t + 3, column=1, value="Solo completar las celdas AMARILLAS. El subtotal y el total se calculan solos.") \
         .font = Font(bold=True, color=ROJO)
@@ -207,7 +227,27 @@ def ics():
     (BASE / "recordatorios-matias.ics").write_text("\r\n".join(L) + "\r\n", encoding="utf-8", newline="")
 
 
+def pc3():
+    """Escribe pc3/productos.md desde las fichas y arma el .zip para copiar a la PC3."""
+    carpeta = BASE / "pc3"
+    t = ["# Productos automotriz: qué decirle al cliente", "",
+         "Explicale a Matías con estas palabras. Para proporciones de mezcla, secado y rendimiento usá SOLO la ficha técnica (carpeta `fichas/`). Si no está, decí que pregunte a Martín.", ""]
+    for f in D["fichas"]:
+        t += [f"## {f['titulo']}", f"**{f['corto']}**", ""] + [f"- {p}" for p in f["puntos"]]
+        t += ["", f"Para decirle al cliente: {f['decir']}", "",
+              "Videos (búsqueda en YouTube): " + " · ".join(
+                  "https://www.youtube.com/results?search_query=" + v.replace(" ", "+") for v in f["videos"]), ""]
+    (carpeta / "productos.md").write_text("\n".join(t), encoding="utf-8")
+    with zipfile.ZipFile(BASE / "asistente-matias-pc3.zip", "w", zipfile.ZIP_DEFLATED) as z:
+        for f in sorted(carpeta.rglob("*")):
+            if f.is_file() and f.name != "LEEME.md":
+                z.write(f, "Asistente Matias/" + str(f.relative_to(carpeta)))
+        z.writestr("Asistente Matias/presupuestos/", "")
+        z.writestr("Asistente Matias/fichas/", "")
+
+
 if __name__ == "__main__":
     excel()
     ics()
-    print("Listo: Planillas-Matias.xlsx y recordatorios-matias.ics")
+    pc3()
+    print("Listo: Planillas-Matias.xlsx, recordatorios-matias.ics y asistente-matias-pc3.zip")

@@ -8,8 +8,9 @@ Página: **https://martincolor.github.io/matias/** (no aparece en Google ni tien
 | `datos.json` | **Todo lo editable**: productos, kits de presupuesto, tareas y horarios, listas de planillas, fichas |
 | `Planillas-Matias.xlsx` | Las mismas planillas en Excel (celdas amarillas = completar) |
 | `recordatorios-matias.ics` | Alarmas para el calendario del celular |
-| `prompt-asistente.md` | Instrucciones para crear el Proyecto de Claude de Matías |
-| `herramientas/generar.py` | Regenera el Excel y el .ics desde `datos.json` |
+| `pc3/` | **El asistente de la PC3** (Claude de escritorio): instrucciones, equivalencias, presupuesto, productos, avisos. Ver `pc3/LEEME.md` |
+| `asistente-matias-pc3.zip` | La carpeta `pc3/` lista para bajar y descomprimir en la PC3 |
+| `herramientas/generar.py` | Regenera el Excel, el .ics, `pc3/productos.md` y el .zip desde `datos.json` |
 | `herramientas/telegram_recordatorio.py` | Lo usa el bot de Telegram |
 
 ## Cambiar algo

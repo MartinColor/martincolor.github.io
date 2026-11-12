@@ -5,7 +5,7 @@
   "productos": [
     {"id": "barniz",       "codigo": "B21.11",   "nombre": "Barniz 2K (alto sólido)",                  "unidad": "L",  "grupo": "Barniz",       "verificar": true},
     {"id": "cat-barniz",   "codigo": "010.021",  "nombre": "Catalizador para barniz",                  "unidad": "L",  "grupo": "Barniz",       "verificar": true},
-    {"id": "base",         "codigo": "BASE",     "nombre": "Pintura base poliéster (color a preparar)", "unidad": "L",  "grupo": "Color",        "color": true},
+    {"id": "base",         "codigo": "BASE",     "nombre": "Pintura base poliéster (color preparado por peso)", "unidad": "kg",  "grupo": "Color",        "color": true},
     {"id": "poliuretano",  "codigo": "PU",       "nombre": "Pintura poliuretano (color a preparar)",   "unidad": "L",  "grupo": "Color",        "color": true},
     {"id": "cat-pu",       "codigo": "CAT-PU",   "nombre": "Catalizador para poliuretano",             "unidad": "L",  "grupo": "Color",        "verificar": true},
     {"id": "fondo",        "codigo": "P41.04",   "nombre": "Fondo relleno",                            "unidad": "L",  "grupo": "Fondo",        "verificar": true},
@@ -27,39 +27,54 @@
     {"id": "pincel",       "codigo": "PINCEL",   "nombre": "Pincel",                                   "unidad": "u",  "grupo": "Extras"}
   ],
 
+  "equivalencias": {
+    "_nota": "Promedio por pieza (paragolpe, guardabarro, capot, puerta…). Lo dijo Martín. Todo se redondea para arriba.",
+    "medio_auto_piezas": 5,
+    "tabla": [
+      {"que": "Fondo",                         "por_pieza": "300 g", "tres_piezas": "1 L"},
+      {"que": "Color (base poliéster lisa o metalizada)", "por_pieza": "250 g", "tres_piezas": "800 g"},
+      {"que": "Color poliuretano",              "por_pieza": "250 g", "tres_piezas": "¾ L"},
+      {"que": "Barniz",                         "por_pieza": "⅓ L",   "tres_piezas": "1 L (+ ½ L catalizador)"},
+      {"que": "Masilla",                        "por_pieza": "—",     "tres_piezas": "1 kg"},
+      {"que": "Lijas",                          "por_pieza": "—",     "tres_piezas": "3 de cada grano"},
+      {"que": "Diluyente",                      "por_pieza": "—",     "tres_piezas": "1 L"}
+    ]
+  },
+
+  "_reglas": "Cantidad de cada línea según N piezas. Número q = q cada 3 piezas (redondeando para arriba). {por_pieza, redondear} = N×por_pieza redondeado para arriba. {de, factor} = cantidad de otra línea × factor.",
   "kits": [
     {
       "id": "bicapa",
-      "nombre": "Base poliéster + barniz (2 o 3 piezas)",
-      "explicacion": "El trabajo más común: masilla, fondo, color base poliéster y barniz encima.",
+      "nombre": "Base poliéster + barniz",
+      "explicacion": "El más común: masilla, fondo, color base poliéster (lisa o metalizada) y barniz.",
       "lineas": [
         ["masilla", 1], ["lija-80", 3], ["lija-150", 3], ["lija-240", 3],
-        ["fondo", 1], ["cat-fondo", 1],
+        ["fondo", {"por_pieza": 0.3, "redondear": 0.5}], ["cat-fondo", 1],
         ["lija-320", 3], ["lija-600", 3], ["lija-800", 3],
-        ["base", 0.5],
-        ["barniz", 1], ["cat-barniz", 0.5],
+        ["base", {"por_pieza": 0.25, "redondear": 0.1}],
+        ["barniz", {"por_pieza": 0.3333, "redondear": 0.5}], ["cat-barniz", {"de": "barniz", "factor": 0.5}],
         ["diluyente", 1]
       ]
     },
     {
       "id": "poliuretano",
-      "nombre": "Poliuretano (2 o 3 piezas)",
-      "explicacion": "Color y brillo en una sola pintura. No lleva barniz.",
+      "nombre": "Poliuretano",
+      "explicacion": "Color y brillo en una sola pintura, para colores lisos. No lleva barniz.",
       "lineas": [
         ["masilla", 1], ["lija-80", 3], ["lija-150", 3], ["lija-240", 3],
-        ["fondo", 1], ["cat-fondo", 1],
+        ["fondo", {"por_pieza": 0.3, "redondear": 0.5}], ["cat-fondo", 1],
         ["lija-320", 3], ["lija-600", 3], ["lija-800", 3],
-        ["poliuretano", 1], ["cat-pu", 0.5],
+        ["poliuretano", {"por_pieza": 0.25, "redondear": 0.25}], ["cat-pu", {"de": "poliuretano", "factor": 0.5}],
         ["diluyente", 1]
       ]
     },
     {
       "id": "reparacion",
-      "nombre": "Solo masilla y fondo (el cliente pinta en otro lado)",
-      "explicacion": "Para el que quiere dejar la pieza preparada.",
+      "nombre": "Solo masilla y fondo",
+      "explicacion": "El cliente deja la pieza preparada y pinta en otro lado.",
       "lineas": [
         ["masilla", 1], ["lija-80", 3], ["lija-150", 3], ["lija-240", 3],
-        ["fondo", 1], ["cat-fondo", 1],
+        ["fondo", {"por_pieza": 0.3, "redondear": 0.5}], ["cat-fondo", 1],
         ["lija-320", 3], ["lija-600", 3], ["lija-800", 3],
         ["diluyente", 1]
       ]
@@ -67,7 +82,8 @@
     {
       "id": "epoxi",
       "nombre": "Epoxi F351 a pincel (interior)",
-      "explicacion": "Esmalte epoxi para metal, galvanizado o aluminio en interiores.",
+      "explicacion": "Esmalte epoxi para metal, galvanizado o aluminio, bajo techo. No es para autos.",
+      "fijo": true,
       "lineas": [
         ["f351", 1], ["cat-f351", 1], ["diluyente", 1], ["lija-240", 2], ["pincel", 1]
       ]
