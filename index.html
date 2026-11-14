@@ -344,6 +344,21 @@ footer.band{padding-block:56px 40px}
 .pr-resto{margin-top:10px;font-size:14px;color:var(--banda-tinta)}
 .pr-resto b{color:var(--rojo)}
 .pr-ver{display:inline-block;margin-top:10px;font-weight:700;font-size:14px;color:var(--banda-tinta);text-decoration:none;border-bottom:2px solid var(--rojo)}
+/* Línea automotriz PPG ACS: paso a paso, mismo estilo de tarjeta flotante que la pintura de obra */
+.au-pasos{display:grid;gap:28px}
+.au-paso{display:grid;gap:12px}
+.au-ph{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.au-n{flex:none;width:34px;height:34px;border-radius:50%;background:#1f6fb2;color:#fff;display:grid;place-items:center;font:800 16px/1 var(--f-texto)}
+.au-ph h3{margin:0;font-size:clamp(19px,2.2vw,23px)}
+.au-ph p{margin:0;color:var(--tinta-suave);font-size:15px;flex-basis:100%;padding-left:46px}
+.au-cod{justify-self:start;display:inline-block;font:700 12px/1 var(--f-texto);letter-spacing:.04em;background:#1f6fb2;color:#fff;border-radius:6px;padding:5px 7px}
+.au .pc-foto{background:linear-gradient(180deg,#fff,#eef3f8)}
+.au .pc-q{color:#1f6fb2}
+.au details{font-size:14px;color:#3a3a3c}
+.au summary{cursor:pointer;font-weight:700;color:#1f6fb2}
+.au dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0 0}
+.au dt{font-weight:700;color:#1d1d1f}
+.au dd{margin:0}
 @keyframes pc-flota{0%,100%{transform:translateY(3px)}50%{transform:translateY(-5px)}}
 @media (max-width:900px){.pr-grid{grid-template-columns:1fr}}
 @media (max-width:440px){.pr-grid{padding:4px 14px}.pc{grid-template-columns:92px 1fr;gap:14px}.pc-foto{border-radius:16px}.pc-wa{display:none}.pc-b,.pc-e{font-size:15px}}
@@ -386,6 +401,7 @@ footer.band{padding-block:56px 40px}
         <a href="#asesoramiento">Asesoramiento</a>
         <a href="#obras">Obras</a>
         <a href="#renner">Pinturas Renner</a>
+        <a href="#automotriz">Automotriz</a>
         <a class="cy-only" href="#cyber">Herramientas</a><a class="post-cy" href="#videos">Herramientas</a>
         <a href="#fichas">Fichas técnicas</a>
         <a href="#horarios">Horarios</a>
@@ -463,6 +479,18 @@ footer.band{padding-block:56px 40px}
       </ul>
       <p class="nota">Los precios de promoción son para pago contado o transferencia. El precio con Mercado Pago incluye la comisión que cobra Mercado Pago por las cuotas sin interés.</p>
     </div>
+  </div>
+</section>
+
+<section id="automotriz" class="prods au">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">PPG Refinish · línea ACS Evolution</p>
+      <h2>Línea automotriz, paso a paso.</h2>
+      <p class="lead">Todo para pintar una pieza o el auto entero, en el orden en que se usa: masilla, fondo, color y barniz. Te preparamos el color con la muestra y te asesoramos con las cantidades.</p>
+    </div>
+    <div class="au-pasos" id="aup"></div>
+    <p class="nota" style="margin-top:20px">Datos de referencia del catálogo PPG ACS Evolution. Precios: consultá por WhatsApp. Fotos ilustrativas.</p>
   </div>
 </section>
 
@@ -737,6 +765,46 @@ const PRODUCTOS = [{"c": "Con precio", "n": "Membrana líquida Renner", "e": "20
   cats.forEach(c => { const b = document.createElement('button'); b.type = 'button'; b.className = 'pr-c'; b.textContent = c; b.setAttribute('aria-pressed', c === 'Todos');
     b.onclick = () => { [...bar.children].forEach(x => x.setAttribute('aria-pressed', x === b)); g.querySelectorAll('.pc').forEach(el => { el.hidden = c !== 'Todos' && el.dataset.c !== c; }); };
     bar.appendChild(b); });
+})();
+
+// Línea automotriz PPG ACS: para cargar precio, completar "p" (ej. "p": "$1.234").
+(() => {
+  const box = document.getElementById('aup'); if (!box) return;
+  const WA = 'https://wa.me/59891333337?text=';
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const lata = (t) => `<svg viewBox="0 0 120 150" role="img" aria-label="${esc(t)}"><ellipse cx="60" cy="22" rx="42" ry="9" fill="#cfd8e0" stroke="#232323" stroke-width="3"/><path d="M18 22 V128 Q60 140 102 128 V22" fill="#1c1c1c" stroke="#232323" stroke-width="3"/><path d="M18 24 V62 Q60 72 102 62 V24 Q60 34 18 24Z" fill="#1f8fd0"/><rect x="40" y="34" width="40" height="20" rx="4" fill="#fff"/><text x="60" y="49" text-anchor="middle" font-family="Montserrat,Arial" font-weight="800" font-size="13" fill="#1f6fb2">PPG</text><text x="60" y="94" text-anchor="middle" font-family="Montserrat,Arial" font-weight="800" font-size="13" fill="#fff">${esc(t)}</text></svg>`;
+  const PASOS = [
+    {t:'Masilla', d:'Para tapar golpes y abolladuras. Se lija y queda lista para el fondo.', p:[
+      {c:'M01', n:'Masilla de poliéster PPG', img:'productos/ppg/masilla-m01.webp', q:'Masilla bicomponente: fácil de aplicar, seca rápido, se lija bien y queda sin poros.', u:'Chapa de acero, aluminio, galvanizado, zincado y fibra de vidrio.', m:'Masilla + 1 a 3% de catalizador', e:'0,7 kg · 1 kg · 1,5 kg · 3 kg'}]},
+    {t:'Plásticos', d:'Si la pieza es de plástico (paragolpes, espejos), antes del fondo va el promotor de adherencia.', p:[
+      {c:'6402', n:'Promotor de adherencia para plásticos', svg:'6402', q:'Hace que la pintura agarre en la mayoría de los plásticos del auto.', u:'Lavar con jabón, desengrasar con SD01 y aplicar 2 manos ligeras.', e:'0,9 L'}]},
+    {t:'Fondo', d:'Rellena, protege la chapa y deja la superficie lisa para el color. Se lija antes de pintar.', p:[
+      {c:'P41', n:'Primer PU alto sólidos gris claro', img:'productos/ppg/primer-p41.webp', q:'Fondo de poliuretano 2 componentes: gran relleno, fácil de lijar, seca rápido y agarra muy bien.', u:'Acero, pintura original, fibra de vidrio, masilla y pinturas viejas en buen estado.', m:'4 partes + 1 de endurecedor END010 + 5 a 30% de diluyente', s:'45 min a 1½ h', e:'0,72 L · 4 L'},
+      {c:'PB41', n:'Primer PU alto sólidos blanco', img:'productos/ppg/primer-p41.webp', q:'El mismo fondo P41 en blanco: ayuda a cubrir mejor los colores claros.', m:'4 + 1 de END010 + diluyente', s:'45 min a 1½ h', e:'0,72 L · 4 L'},
+      {c:'PP41', n:'Primer PU alto sólidos negro', img:'productos/ppg/primer-p41.webp', q:'El mismo fondo P41 en negro: ideal debajo de colores oscuros.', m:'4 + 1 de END010 + diluyente', s:'45 min a 1½ h', e:'0,72 L · 4 L'},
+      {c:'P51', n:'Primer PU alto sólidos 5:1', img:'productos/ppg/primer-p51.webp', q:'Fondo de poliuretano gris claro, más económico. Buen relleno y fácil lijado.', u:'Chapa y fibra de vidrio.', m:'5 partes + 1 de END010 + diluyente', s:'2 a 3 h', e:'0,75 L · 4 L'},
+      {c:'PU01', n:'Primer rápido universal gris', img:'productos/ppg/primer-pu01.webp', q:'Fondo de secado rápido y lijado fácil, para trabajos ágiles.', u:'Acero, pintura original, fibra de vidrio y masilla.', m:'1 parte + 1 a 1,8 de diluyente universal DU0101', e:'0,9 L · 3,5 L'}]},
+    {t:'Color', d:'Preparamos el color en nuestro laboratorio con la muestra de tu auto (base poliéster o poliuretano).', p:[]},
+    {t:'Barniz', d:'Va arriba del color base poliéster: le da el brillo y lo protege del sol y la lluvia.', p:[
+      {c:'V21', n:'Barniz PU 2:1 alto sólidos', img:'productos/ppg/barniz-v21.webp', q:'Excelente brillo, fácil de aplicar, seca rápido y aguanta la intemperie. Para pintado general o parcial.', m:'2 partes + 1 de endurecedor END010/END020', s:'6 a 8 h', e:'0,9 L · 4 L'},
+      {c:'V51', n:'Barniz alto brillo 5:1', img:'productos/ppg/barniz-v51.webp', q:'Muy resistente a la intemperie, jabones, detergentes y combustibles, con gran brillo final.', m:'5 partes + 1 de END010/END020 + 5% diluyente (opcional)', s:'6 a 8 h', e:'0,75 L · 4,5 L'},
+      {c:'V81', n:'Barniz PU 8:1', img:'productos/ppg/barniz-v81.webp', q:'Buena resistencia y excelente brillo, la opción más económica.', m:'8 partes + 1 de END010/END020 + 5% diluyente (opcional)', s:'10 a 12 h', e:'0,8 L'}]}
+  ];
+  const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : '';
+  const card = f => {
+    const msg = f.p ? `Hola Martín Color, quiero ${f.c} ${f.n} a ${f.p}` : `Hola Martín Color, quería consultar el precio de ${f.c} ${f.n} (línea automotriz PPG)`;
+    return `<article class="pc">
+      <div class="pc-foto"><div class="pc-flota">${f.img ? `<img src="${esc(f.img)}" alt="${esc(f.c + ' ' + f.n)}" loading="lazy">` : lata(f.svg)}</div></div>
+      <div class="pc-i">
+        <span class="au-cod">${esc(f.c)}</span>
+        <h3>${esc(f.n)}</h3>
+        <p class="pc-b">${esc(f.q)}</p>
+        <p class="pc-e">Presentaciones: ${esc(f.e)}</p>
+        ${f.p ? `<p class="pc-p"><b>${esc(f.p)}</b></p>` : '<p class="pc-q">Consultá el precio</p>'}
+        <details><summary>Ficha técnica</summary><dl>${row('Sirve para', f.u)}${row('Mezcla', f.m)}${row('Secado', f.s)}</dl></details>
+        <a class="pc-wa-btn" href="${WA + encodeURIComponent(msg)}" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      </div></article>`; };
+  box.innerHTML = PASOS.map((s, i) => `<div class="au-paso"><div class="au-ph"><span class="au-n">${i + 1}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></div>${s.p.length ? `<div class="pr-grid">${s.p.map(card).join('')}</div>` : `<div class="pr-grid"><p class="pc-q" style="padding:20px 0">Traé la muestra o el código de color de tu auto y te lo preparamos. <a href="${WA + encodeURIComponent('Hola Martín Color, quiero consultar por un color para mi auto')}" target="_blank" rel="noopener">Consultar color</a></p></div>`}</div>`).join('');
 })();
 
 // Video de la membrana: arranca solo (sin sonido) cuando aparece en pantalla.
