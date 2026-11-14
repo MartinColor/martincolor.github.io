@@ -361,6 +361,31 @@ footer.band{padding-block:56px 40px}
 .au dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0 0}
 .au dt{font-weight:700;color:#1d1d1f}
 .au dd{margin:0}
+/* Cartel Línea automotriz: banda con texto corrido + auto PPG */
+.au-ban{position:relative;overflow:hidden;background:radial-gradient(120% 140% at 70% 0%,#1d5fa0 0%,#0d2f57 55%,#081d38 100%);color:#fff;border-radius:24px;margin:0 0 34px;isolation:isolate}
+.au-marq{overflow:hidden;background:#e30613;border-bottom:3px solid #fff;white-space:nowrap}
+.au-marq-in{display:inline-flex;animation:au-corre 26s linear infinite}
+.au-marq span{font:400 clamp(15px,2vw,20px)/1 var(--f-titulo);letter-spacing:.14em;padding:13px 0;display:inline-flex;align-items:center;gap:22px;padding-right:22px}
+.au-marq i{font-style:normal;color:#ffd200}
+@keyframes au-corre{to{transform:translateX(-50%)}}
+.au-esc{position:relative;display:grid;grid-template-columns:1fr 1.25fr;align-items:center;gap:10px;padding:26px 30px 0}
+.au-tit{padding-bottom:26px;z-index:2}
+.au-logo{display:inline-grid;place-items:center;width:84px;height:84px;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.35);margin-bottom:16px}
+.au-logo b{display:grid;place-items:center;width:72px;height:72px;border-radius:13px;background:#1f8fd0;border:3px solid #0d5ea8;font:900 28px/1 Georgia,"Times New Roman",serif;color:#fff;letter-spacing:-.02em}
+.au-tit h3{font:400 clamp(24px,3.6vw,42px)/1.05 var(--f-titulo);margin:0 0 10px;color:#fff}
+.au-tit p{margin:0;font-size:15px;color:#cfe3f7;max-width:34ch}
+.au-auto{position:relative;align-self:end;z-index:1;margin-bottom:8px}
+.au-auto svg{display:block;width:100%;height:auto;animation:au-rueda-cuerpo 2.4s ease-in-out infinite}
+.au-auto .rd{transform-box:fill-box;transform-origin:center;animation:au-gira 1s linear infinite}
+.au-ruta{position:absolute;left:0;right:0;bottom:0;height:22px;background:#06152a;overflow:hidden}
+.au-ruta:before{content:"";position:absolute;left:0;top:9px;width:200%;height:4px;background:repeating-linear-gradient(90deg,#ffd200 0 46px,transparent 46px 92px);animation:au-ruta 1.2s linear infinite}
+.au-brillo{position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.08) 50%,transparent 60%);background-size:250% 100%;animation:au-brillo 5s ease-in-out infinite;pointer-events:none}
+@keyframes au-gira{to{transform:rotate(360deg)}}
+@keyframes au-ruta{to{transform:translateX(-92px)}}
+@keyframes au-rueda-cuerpo{50%{transform:translateY(-3px)}}
+@keyframes au-brillo{0%{background-position:120% 0}100%{background-position:-120% 0}}
+@media (max-width:760px){.au-esc{grid-template-columns:1fr;padding:20px 18px 0}.au-tit{padding-bottom:4px}.au-logo{width:64px;height:64px;border-radius:14px;margin-bottom:10px}.au-logo b{width:54px;height:54px;font-size:21px;border-radius:10px}}
+@media (prefers-reduced-motion:reduce){.au-marq-in,.au-auto svg,.au-auto .rd,.au-ruta:before,.au-brillo{animation:none}}
 @keyframes pc-flota{0%,100%{transform:translateY(3px)}50%{transform:translateY(-5px)}}
 @media (max-width:900px){.pr-grid{grid-template-columns:1fr}}
 @media (max-width:440px){.pr-grid{padding:4px 14px}.pc{grid-template-columns:92px 1fr;gap:14px}.pc-foto{border-radius:16px}.pc-wa{display:none}.pc-b,.pc-e{font-size:15px}}
@@ -486,6 +511,32 @@ footer.band{padding-block:56px 40px}
 
 <section id="automotriz" class="prods au">
   <div class="wrap">
+    <div class="au-ban" aria-label="Línea automotriz PPG">
+      <div class="au-marq" aria-hidden="true"><div class="au-marq-in"><span>LÍNEA AUTOMOTRIZ <i>★</i> PPG <i>★</i> PINTURA PARA TU AUTO <i>★</i> COLOR EXACTO DE FÁBRICA <i>★</i> FONDOS · BARNICES · MASILLAS <i>★</i></span><span>LÍNEA AUTOMOTRIZ <i>★</i> PPG <i>★</i> PINTURA PARA TU AUTO <i>★</i> COLOR EXACTO DE FÁBRICA <i>★</i> FONDOS · BARNICES · MASILLAS <i>★</i></span><span>LÍNEA AUTOMOTRIZ <i>★</i> PPG <i>★</i> PINTURA PARA TU AUTO <i>★</i> COLOR EXACTO DE FÁBRICA <i>★</i> FONDOS · BARNICES · MASILLAS <i>★</i></span><span>LÍNEA AUTOMOTRIZ <i>★</i> PPG <i>★</i> PINTURA PARA TU AUTO <i>★</i> COLOR EXACTO DE FÁBRICA <i>★</i> FONDOS · BARNICES · MASILLAS <i>★</i></span></div></div>
+      <div class="au-esc">
+        <div class="au-tit"><span class="au-logo"><b>PPG</b></span><h3>Línea automotriz</h3><p>Pintura profesional PPG para tu auto: del golpe al brillo final.</p></div>
+        <div class="au-auto"><svg viewBox="0 0 560 190" role="img" aria-label="Auto pintado con PPG">
+<defs>
+<linearGradient id="carro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4b4b"/><stop offset=".45" stop-color="#d4141c"/><stop offset="1" stop-color="#7a0a10"/></linearGradient>
+<linearGradient id="vidrio" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe3ff"/><stop offset="1" stop-color="#3b6d99"/></linearGradient>
+<radialGradient id="llanta"><stop offset="0" stop-color="#eef2f5"/><stop offset="1" stop-color="#8a96a1"/></radialGradient>
+</defs>
+<ellipse cx="280" cy="176" rx="250" ry="9" fill="rgba(0,0,0,.45)"/>
+<path d="M34 138 Q34 112 70 104 L168 92 Q206 54 268 48 L350 48 Q392 52 428 90 L500 100 Q530 106 532 128 L532 146 Q532 156 520 156 L470 156 A44 44 0 0 0 384 156 L178 156 A44 44 0 0 0 92 156 L46 156 Q34 156 34 146 Z" fill="url(#carro)" stroke="#5a070b" stroke-width="2"/>
+<path d="M186 92 Q216 62 266 58 L304 58 L304 92 Z" fill="url(#vidrio)"/>
+<path d="M316 58 L348 58 Q382 62 410 92 L316 92 Z" fill="url(#vidrio)"/>
+<path d="M60 112 Q200 100 520 112" stroke="rgba(255,255,255,.55)" stroke-width="3" fill="none"/>
+<line x1="310" y1="94" x2="310" y2="150" stroke="#5a070b" stroke-width="2"/>
+<rect x="322" y="104" width="22" height="5" rx="2" fill="#5a070b"/>
+<path d="M512 112 L530 116 L530 126 L508 124 Z" fill="#fff6c8"/>
+<path d="M36 116 L50 114 L50 126 L36 128 Z" fill="#ff8a00"/>
+<g transform="translate(212 104)"><rect width="52" height="34" rx="7" fill="#fff"/><rect x="3" y="3" width="46" height="28" rx="5" fill="#1f8fd0"/><text x="26" y="24" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="900" font-size="18" fill="#fff">PPG</text></g>
+<g class="rd"><circle cx="135" cy="150" r="31" fill="#111"/><circle cx="135" cy="150" r="20" fill="url(#llanta)"/><g stroke="#5b6670" stroke-width="4"><line x1="135" y1="132" x2="135" y2="168"/><line x1="117" y1="150" x2="153" y2="150"/><line x1="122" y1="137" x2="148" y2="163"/><line x1="148" y1="137" x2="122" y2="163"/></g><circle cx="135" cy="150" r="5" fill="#2a2f35"/></g><g class="rd"><circle cx="427" cy="150" r="31" fill="#111"/><circle cx="427" cy="150" r="20" fill="url(#llanta)"/><g stroke="#5b6670" stroke-width="4"><line x1="427" y1="132" x2="427" y2="168"/><line x1="409" y1="150" x2="445" y2="150"/><line x1="414" y1="137" x2="440" y2="163"/><line x1="440" y1="137" x2="414" y2="163"/></g><circle cx="427" cy="150" r="5" fill="#2a2f35"/></g>
+</svg></div>
+        <div class="au-ruta"></div>
+      </div>
+      <div class="au-brillo"></div>
+    </div>
     <div class="head rv">
       <p class="eyebrow">PPG Refinish · línea ACS Evolution</p>
       <h2>Línea automotriz, paso a paso.</h2>
