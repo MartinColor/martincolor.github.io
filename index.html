@@ -351,6 +351,8 @@ footer.band{padding-block:56px 40px}
 .au-n{flex:none;width:34px;height:34px;border-radius:50%;background:#1f6fb2;color:#fff;display:grid;place-items:center;font:800 16px/1 var(--f-texto)}
 .au-ph h3{margin:0;font-size:clamp(19px,2.2vw,23px)}
 .au-ph p{margin:0;color:var(--tinta-suave);font-size:15px;flex-basis:100%;padding-left:46px}
+.au .pc-flota.cov{inset:0;animation:none}.au .pc-flota.cov img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;filter:none}
+.au-extra{margin-top:18px;padding-top:28px;border-top:1px solid #d8e2ec}
 .au-cod{justify-self:start;display:inline-block;font:700 12px/1 var(--f-texto);letter-spacing:.04em;background:#1f6fb2;color:#fff;border-radius:6px;padding:5px 7px}
 .au .pc-foto{background:linear-gradient(180deg,#fff,#eef3f8)}
 .au .pc-q{color:#1f6fb2}
@@ -487,7 +489,7 @@ footer.band{padding-block:56px 40px}
     <div class="head rv">
       <p class="eyebrow">PPG Refinish · línea ACS Evolution</p>
       <h2>Línea automotriz, paso a paso.</h2>
-      <p class="lead">Todo para pintar una pieza o el auto entero, en el orden en que se usa: masilla, fondo, color y barniz. Te preparamos el color con la muestra y te asesoramos con las cantidades.</p>
+      <p class="lead">Todo para pintar una pieza o el auto entero, en el orden en que se usa: masilla, fondo, color y barniz. Y además, esmalte epoxi en kit. Te preparamos el color con la muestra y te asesoramos con las cantidades.</p>
     </div>
     <div class="au-pasos" id="aup"></div>
     <p class="nota" style="margin-top:20px">Datos de referencia del catálogo PPG ACS Evolution. Precios: consultá por WhatsApp. Fotos ilustrativas.</p>
@@ -789,12 +791,20 @@ const PRODUCTOS = [{"c": "Con precio", "n": "Membrana líquida Renner", "e": "20
       {c:'V21', n:'Barniz PU 2:1 alto sólidos', img:'productos/ppg/barniz-v21.webp', q:'Excelente brillo, fácil de aplicar, seca rápido y aguanta la intemperie. Para pintado general o parcial.', m:'2 partes + 1 de endurecedor END010/END020', s:'6 a 8 h', e:'0,9 L · 4 L'},
       {c:'V51', n:'Barniz alto brillo 5:1', img:'productos/ppg/barniz-v51.webp', q:'Muy resistente a la intemperie, jabones, detergentes y combustibles, con gran brillo final.', m:'5 partes + 1 de END010/END020 + 5% diluyente (opcional)', s:'6 a 8 h', e:'0,75 L · 4,5 L'},
       {c:'V81', n:'Barniz PU 8:1', img:'productos/ppg/barniz-v81.webp', q:'Buena resistencia y excelente brillo, la opción más económica.', m:'8 partes + 1 de END010/END020 + 5% diluyente (opcional)', s:'10 a 12 h', e:'0,8 L'}]}
+,
+    {t:'Esmalte epoxi PPG Delfrit, en kit', x:1, d:'Pintura epoxi de 2 componentes, muy dura y resistente. Viene en kit con todo lo necesario: elegís el color en la cartilla y te lo preparamos.', p:[
+      {c:'F351', n:'Kit epoxi Delfrit', img:'productos/ppg/epoxi-kit.webp', q:'Todo junto en un kit: la pintura, su catalizador y el diluyente.', u:'Elegí el color en las cartillas de abajo.', m:'Resina F351 + catalizador F359 + diluyente DIL010.11', e:'1 L de pintura + ¼ L de catalizador + ½ L de diluyente'},
+      {c:'BLANCO · GRIS', n:'Kit epoxi blanco y grises', img:'productos/ppg/epoxi-gris.webp', cov:1, q:'Blanco y toda la gama de grises de la cartilla.', m:'Resina F351 + catalizador F359 + diluyente DIL010.11', e:'1 L de pintura + ¼ L de catalizador + ½ L de diluyente'},
+      {c:'ROJO · VERDE', n:'Kit epoxi rojos y verdes', img:'productos/ppg/epoxi-rojo-verde.webp', cov:1, q:'Rojos (cartilla EFT 41630 a 43274) y verdes (cartilla EFT 51400 a 53199).', m:'Resina F351 + catalizador F359 + diluyente DIL010.11', e:'1 L de pintura + ¼ L de catalizador + ½ L de diluyente'},
+      {c:'AMARILLO · NARANJA', n:'Kit epoxi amarillos y naranjas', img:'productos/ppg/epoxi-amarillo-naranja.webp', cov:1, q:'Amarillos (cartilla EFT 21005 a 22400) y naranjas (cartilla EFT 30975 a 31900).', m:'Resina F351 + catalizador F359 + diluyente DIL010.11', e:'1 L de pintura + ¼ L de catalizador + ½ L de diluyente'},
+      {c:'AZUL', n:'Kit epoxi azules', img:'productos/ppg/epoxi-azul.webp', cov:1, q:'Azules y celestes (cartilla EFT 60001 a 61324).', m:'Resina F351 + catalizador F359 + diluyente DIL010.11', e:'1 L de pintura + ¼ L de catalizador + ½ L de diluyente'},
+      {c:'SELLADOR', n:'Kit sellador epoxi transparente', img:'productos/ppg/epoxi-kit.webp', q:'El mismo kit, pero con la resina transparente (sin color).', m:'Resina transparente + catalizador F359 + diluyente DIL010.11', e:'1 L de resina + ¼ L de catalizador + ½ L de diluyente'}]}
   ];
   const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : '';
   const card = f => {
     const msg = f.p ? `Hola Martín Color, quiero ${f.c} ${f.n} a ${f.p}` : `Hola Martín Color, quería consultar el precio de ${f.c} ${f.n} (línea automotriz PPG)`;
     return `<article class="pc">
-      <div class="pc-foto"><div class="pc-flota">${f.img ? `<img src="${esc(f.img)}" alt="${esc(f.c + ' ' + f.n)}" loading="lazy">` : lata(f.svg)}</div></div>
+      <div class="pc-foto"><div class="pc-flota${f.cov ? ' cov' : ''}">${f.img ? `<img src="${esc(f.img)}" alt="${esc(f.c + ' ' + f.n)}" loading="lazy">` : lata(f.svg)}</div></div>
       <div class="pc-i">
         <span class="au-cod">${esc(f.c)}</span>
         <h3>${esc(f.n)}</h3>
@@ -804,7 +814,7 @@ const PRODUCTOS = [{"c": "Con precio", "n": "Membrana líquida Renner", "e": "20
         <details><summary>Ficha técnica</summary><dl>${row('Sirve para', f.u)}${row('Mezcla', f.m)}${row('Secado', f.s)}</dl></details>
         <a class="pc-wa-btn" href="${WA + encodeURIComponent(msg)}" target="_blank" rel="noopener">Consultar por WhatsApp</a>
       </div></article>`; };
-  box.innerHTML = PASOS.map((s, i) => `<div class="au-paso"><div class="au-ph"><span class="au-n">${i + 1}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></div>${s.p.length ? `<div class="pr-grid">${s.p.map(card).join('')}</div>` : `<div class="pr-grid"><p class="pc-q" style="padding:20px 0">Traé la muestra o el código de color de tu auto y te lo preparamos. <a href="${WA + encodeURIComponent('Hola Martín Color, quiero consultar por un color para mi auto')}" target="_blank" rel="noopener">Consultar color</a></p></div>`}</div>`).join('');
+  box.innerHTML = PASOS.map((s, i) => `<div class="au-paso${s.x ? ' au-extra' : ''}"><div class="au-ph"><span class="au-n">${s.x ? '+' : i + 1}</span><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></div>${s.p.length ? `<div class="pr-grid">${s.p.map(card).join('')}</div>` : `<div class="pr-grid"><p class="pc-q" style="padding:20px 0">Traé la muestra o el código de color de tu auto y te lo preparamos. <a href="${WA + encodeURIComponent('Hola Martín Color, quiero consultar por un color para mi auto')}" target="_blank" rel="noopener">Consultar color</a></p></div>`}</div>`).join('');
 })();
 
 // Video de la membrana: arranca solo (sin sonido) cuando aparece en pantalla.
