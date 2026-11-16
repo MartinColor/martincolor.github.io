@@ -15,6 +15,11 @@
     ['.cinta-mc, .au-marq', 'rojo', 'fill'],
     ['.pct > div, .memb-card, .mc-card', 'rojo', 'ring'],
     ['.cartel', 'celeste', 'lines'],
+    // fichas técnicas y etiquetas que tienen que llamar la atención
+    ['.dur, .sello, .techo', 'celeste', 'fill'],
+    ['.ft-links a, .desc', 'celeste', 'under'],
+    ['.au-cod, .au-n', 'azul', 'fill'],
+    ['.ult, .mc-40', 'rojo', 'fill'],
   ];
 
   const css = document.createElement('style');
@@ -30,7 +35,10 @@
 .hdr-ring.hdr-ok::after{content:"";position:absolute;inset:3px;border-radius:inherit;background:var(--hdr-bg);z-index:-1;pointer-events:none}
 .hdr-lines>video.hdr-v{left:0;width:100%;height:3px}
 .hdr-lines>video.hdr-v.top{top:0}.hdr-lines>video.hdr-v.bot{bottom:0}
-.hdr-lines.hdr-ok{border-color:transparent!important}`;
+.hdr-lines.hdr-ok{border-color:transparent!important}
+.hdr-under>video.hdr-v{left:0;bottom:-3px;width:100%;height:3px}
+.hdr-under{overflow:visible}
+.hdr-under.hdr-ok{border-bottom-color:transparent!important}`;
   document.head.appendChild(css);
 
   const vistos = new Set();
