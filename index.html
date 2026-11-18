@@ -410,6 +410,21 @@ footer.band{padding-block:56px 40px}
 /* 40% que se prende y se apaga en la cinta */
 .cinta-mc .mc-40{display:inline-block;background:var(--negro);color:#fff;padding:4px 10px;border-radius:6px;font-weight:800;letter-spacing:.06em;box-shadow:0 0 0 2px #fff inset;animation:parpadeo .9s steps(1,end) infinite}
 @media (prefers-reduced-motion:reduce){.cinta-mc .mc-40{animation:none}}
+
+/* Oferta Carro Tolsen */
+.tol{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:clamp(24px,4vw,48px);align-items:center}
+.tol-card{background:var(--banda-sup);border:2px solid #ffb000;border-radius:var(--r-l);padding:16px;width:min(100%,380px);justify-self:center}
+.tol-card video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r-m);background:#000;display:block}
+.tol-off{justify-self:start;display:inline-block;background:#ffb000;color:#232323;font:800 13px/1 var(--f-texto);letter-spacing:.12em;text-transform:uppercase;padding:9px 13px;border-radius:999px}
+.tol-precio{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;font-variant-numeric:tabular-nums;margin:6px 0}
+.tol-precio s{color:var(--banda-suave);font-size:20px}
+.tol-precio b{font:400 clamp(38px,5vw,54px)/1 var(--f-titulo);color:#ffb000}
+.tol-lista{margin:0;padding-left:20px;display:grid;gap:4px}
+.tol-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.tol-btns .btn{margin-top:0}
+.tol-txt{display:grid;gap:16px}
+.tol-nota{font-size:14px;color:var(--banda-suave)}
+@media (max-width:860px){.tol{grid-template-columns:1fr}}
 </style>
 
 <div class="cinta-mc" role="marquee" aria-label="Aprovechá hasta 40% de descuento en pinturas Renner · No te quedes con la duda: consultá · Te asesoramos antes de venderte · Plan Doble Carga INGCO 42V: desde el 16/11"><div class="cinta-in" aria-hidden="true"><span>APROVECHÁ HASTA <b class="mc-40">40% DE DESCUENTO</b> EN PINTURAS RENNER<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>NO TE QUEDES CON LA DUDA: CONSULTÁ<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>TE ASESORAMOS ANTES DE VENDERTE<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span class="post-cy">HASTA UN <b class="mc-40">40% DE DESCUENTO</b> O HASTA QUE NOS ARREPINTAMOS DE PINTAR<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>PLAN DOBLE CARGA INGCO 42V: DESDE EL 16/11<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>APROVECHÁ HASTA <b class="mc-40">40% DE DESCUENTO</b> EN PINTURAS RENNER<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>NO TE QUEDES CON LA DUDA: CONSULTÁ<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>TE ASESORAMOS ANTES DE VENDERTE<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span class="post-cy">HASTA UN <b class="mc-40">40% DE DESCUENTO</b> O HASTA QUE NOS ARREPINTAMOS DE PINTAR<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span><span>PLAN DOBLE CARGA INGCO 42V: DESDE EL 16/11<i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5s7 7.3 7 12.5a7 7 0 0 1-14 0c0-5.2 7-12.5 7-12.5z"/></svg></i></span></div></div>
@@ -499,6 +514,33 @@ footer.band{padding-block:56px 40px}
         <li><b>Envíos a todo el país por DAC</b>Te lo mandamos a cualquier punto de Uruguay. El flete lo paga el cliente.</li>
       </ul>
       <p class="nota">Los precios de promoción son para pago contado o transferencia. El precio con Mercado Pago incluye la comisión que cobra Mercado Pago por las cuotas sin interés.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="tolsen">
+  <div class="wrap tol">
+    <div class="tol-txt rv">
+      <p class="eyebrow">Herramientas Tolsen · oferta</p>
+      <span class="tol-off">15% OFF</span>
+      <h2>Carro de herramientas Tolsen de 5 cajones, completo.</h2>
+      <p class="lead" style="color:var(--banda-suave)">Viene con todas las herramientas, ordenadas en sus bandejas. Ideal para el taller, el mecánico y el herrero.</p>
+      <ul class="tol-lista">
+        <li>5 cajones reforzados con todas las herramientas</li>
+        <li>Ruedas con freno y cerradura con llave</li>
+        <li>Lateral con puerta y panel para colgar herramientas</li>
+      </ul>
+      <p class="tol-precio"><s>Antes USD 1.320</s><b>USD 1.122</b></p>
+      <p><b>Con Mercado Pago: $ 46.900 en hasta 12 pagos.</b> En el local, OCA y Visa hasta 6 pagos sin recargo.</p>
+      <div class="tol-btns">
+        <a class="btn btn-mp" href="https://mpago.la/2sYMmAc" target="_blank" rel="noopener">Comprar con Mercado Pago · $ 46.900</a>
+        <a class="btn btn-wa" href="https://wa.me/59891333337?text=Hola%20Mart%C3%ADn%20Color%2C%20quer%C3%ADa%20consultar%20por%20el%20carro%20de%20herramientas%20Tolsen%20de%205%20cajones%20en%20oferta" target="_blank" rel="noopener">Consultá por WhatsApp</a>
+      </div>
+      <p class="tol-nota">¿Te lo mandamos? Hacemos el envío por Mercado Envíos, con el flete aparte. <a href="https://wa.me/59891333337?text=Hola%20Mart%C3%ADn%20Color%2C%20quer%C3%ADa%20saber%20cu%C3%A1nto%20sale%20el%20env%C3%ADo%20del%20carro%20de%20herramientas%20Tolsen%20a%20mi%20ciudad" target="_blank" rel="noopener">Consultá el costo del envío</a>.</p>
+      <p class="tol-nota">Precio en dólares con IVA, contado o transferencia. Oferta por tiempo limitado o hasta agotar stock.</p>
+    </div>
+    <div class="tol-card rv">
+      <video controls muted playsinline preload="metadata" poster="videos/carro-tolsen.jpg" src="videos/carro-tolsen.mp4" aria-label="Video del carro de herramientas Tolsen de 5 cajones abriendo cada cajón"></video>
     </div>
   </div>
 </section>
