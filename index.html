@@ -310,7 +310,7 @@ footer.band{padding-block:56px 40px}
 .bf-wa{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;background:#25D366;color:#fff;text-decoration:none;font:700 15px/1 var(--f-texto);padding:13px 12px;border-radius:999px;box-shadow:0 0 18px rgba(37,211,102,.35)}
 .bf-wa svg{width:18px;height:18px}
 .bf-wa:hover{filter:brightness(1.08)}
-@media (max-width:700px){.bf-wa-l{display:none}.bf-wa{font-size:16px;padding:12px 10px}}
+@media (max-width:700px){.bf-wa{font-size:16px;padding:12px 10px}}
 @media (prefers-reduced-motion:reduce){.bf-cat .fl-img,.bf-cat .fl-img::after{animation:none}}
 
 /* Fin del Cyber (clase puesta en <html> por el script del head) */
@@ -588,7 +588,7 @@ footer.band{padding-block:56px 40px}
       <button type="button" class="cat-t bf-t" aria-pressed="false" data-b="LUSQTOFF">Lüsqtoff <span>(17)</span></button>
     </div>
     <div class="cat bf-cat" id="bfcat"></div>
-    <p class="cuotas rv">Precios en dólares, IVA incluido, hasta agotar stock. En el local, hasta 6 cuotas sin recargo con OCA o Visa. Tocá un flyer para verlo grande, o «Comprar por WhatsApp» para pedirlo.</p>
+    <p class="cuotas rv">Precios en dólares, IVA incluido, hasta agotar stock. En el local, hasta 6 cuotas sin recargo con OCA o Visa. Tocá un flyer para verlo grande, o «WhatsApp» para pedirlo.</p>
   </div>
 </section>
 
@@ -898,7 +898,7 @@ if (Date.now() >= fin.getTime()) {
   const g = document.getElementById('bfcat'); if (!g) return;
   const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const wa = f => 'https://wa.me/59891333337?text=' + encodeURIComponent(`Hola Martín Color, quiero la oferta Black Friday: ${f.b} ${f.n} (código ${f.c}) a ${f.p} (${f.o}% OFF)`);
-  g.innerHTML = BF.map((f,i) => `<figure class="fl" data-b="${f.k}"><button type="button" class="fl-img" data-i="${i}" aria-label="Ver flyer ${esc(f.n)}"><img src="${f.f}" alt="Black Friday ${f.b} ${esc(f.n)}: antes ${f.a}, ahora ${f.p}" loading="lazy" width="720" height="900"></button><figcaption><span><s>${f.a}</s> <b>${f.p}</b> · ${f.o}%</span></figcaption><a class="bf-wa" href="${wa(f)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5z"/></svg>Comprar<span class="bf-wa-l"> por WhatsApp</span></a></figure>`).join('');
+  g.innerHTML = BF.map((f,i) => `<figure class="fl" data-b="${f.k}"><button type="button" class="fl-img" data-i="${i}" aria-label="Ver flyer ${esc(f.n)}"><img src="${f.f}" alt="Black Friday ${f.b} ${esc(f.n)}: antes ${f.a}, ahora ${f.p}" loading="lazy" width="720" height="900"></button><figcaption><span><s>${f.a}</s> <b>${f.p}</b> · ${f.o}%</span></figcaption><a class="bf-wa" href="${wa(f)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.4 9.4 0 0 0-8.1 14.2L2.6 21.5l4.9-1.3A9.4 9.4 0 1 0 12 2.5z"/></svg>WhatsApp</a></figure>`).join('');
   document.querySelectorAll('.bf-t').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.bf-t').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
     g.querySelectorAll('.fl').forEach(fl => { fl.hidden = !!b.dataset.b && fl.dataset.b !== b.dataset.b; });
